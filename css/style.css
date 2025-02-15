@@ -1,3 +1,26 @@
+
+/* defini cores temas dark */
+:root,
+:root[data-theme="dark"] {
+
+    --bg-header: #222;
+    --icone-tema:#eeeeee;
+
+    --bg-header: #222;
+    --icone-tema: #eeeeee;
+
+}
+
+/* defini cores temas light */
+:root[data-theme="light"] {
+
+    --bg-header: #fff;
+    --icone-tema: #121212;
+
+}
+
+
+
 /* reset css */
 *{
     margin: 0;
@@ -6,8 +29,12 @@
 }
 
 body {
-    background: #222; /* cor fundo */
+    background: var(--bg-header); /* cor fundo */
     color: #d2d2d2;  /* cor texto */
+}
+
+h1 {
+    font-size: 50px;
 }
 
 i {
@@ -21,7 +48,7 @@ i {
     justify-content: space-between;
     align-items: center;
     width: 100%;
-    background: #222;
+    background:var(--icone-tema);
     padding: 8px 16px;
     z-index: 2;
 }
@@ -29,7 +56,7 @@ i {
 .menu { 
     display: flex;
     align-items: center;
-    background: #222; /* cor fundo */
+    background: var(--bg-header); /* cor fundo */
     gap: 25px;
     list-style: none;
 }
@@ -94,6 +121,12 @@ i {
 .header-nav {
     display: none;
 }
+#toggleTheme {
+    font-size: 24px;
+    color: var(--icone-tema);
+    cursor: pointer;
+    transition: ease-in-out .4s;
+}
 
 #home {
     display: flex;
@@ -120,9 +153,9 @@ i {
 @media (min-width: 768px) {  /* a partir de: 768px */
     #header {
         position: fixed;
-        border-bottom: 1px solid #f3f3f3;
+        border-bottom: 1px solid var(--icone-tema);
         padding: 16px 80px;
-        background: #222;
+        background: var(--bg-header);
     }
     .nav-mobile {
         display: none;
@@ -148,6 +181,8 @@ i {
     }
 }
 @media (min-width: 1400px) 
+
+
 
 
 
