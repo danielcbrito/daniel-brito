@@ -1,21 +1,18 @@
+/* reset css */
 *{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-
 }
 
 body {
-    background: #222222;
-    /* cor fundo */
-    color: #d2d2d2;
-    /* cor texto */
+    background: #222; /* cor fundo */
+    color: #d2d2d2;  /* cor texto */
 }
 
 i {
-    color: rgba(236, 214, 15, 0.925);
-    font-size: 20px;
-    /* tamanho do texto */
+    color: aqua;
+    font-size: 20px; /* tamanho do texto */
 }
 
 #header {
@@ -23,40 +20,144 @@ i {
     flex-flow: row wrap;
     justify-content: space-between;
     align-items: center;
-    width: 100;
-    height: 70px;
-    background: #549de228;
-    padding: 10px 16px 20px 25px;
+    width: 100%;
+    background: #222;
+    padding: 8px 16px;
     z-index: 2;
-
 }
 
-.menu {
+.menu { 
     display: flex;
     align-items: center;
-    background: #222222;
-    gap: 15px;
+    background: #222; /* cor fundo */
+    gap: 25px;
     list-style: none;
-   
+}
 
+.menu-mobile {
+    width: 100;
+    position: fixed;
+    bottom: 0;
+    justify-content: space-between;
+    border-top: 1px; 
 }
 
 .menu-item {
     width: 100%;
-   
-
 }
 
-.menu-link {
+.menu-link { 
     display: flex;
     text-decoration: none;
-
-
 }
 
 .menu-texto {
     font-size: 20px;
     text-transform: uppercase;
+}
 
+.menu-mobile .menu-link {
+    flex-direction: column;
+    justify-content: center;
+    padding: 7px 15px;
 
 }
+
+.menu-link.active .menu-icone,
+.menu-link.active .menu-texto,
+.menu-link:hover .menu-icone,
+.menu-link:hover .menu-texto{
+    color: #f3f3f3;
+    font-weight: 800;
+}
+
+/* não selecionados */
+.menu-icone,
+.menu-texto{ 
+    color: #797979;
+    font-weight: 400;
+}
+
+/* .menu-link .menu-texto:hover,
+.menu-link .menu-icone:hover {
+    font-size: 22px;
+} */
+
+.menu-icone {
+    font-size: 25px;
+}
+
+.menu-principal {
+    gap: 20px;
+}
+
+.header-nav {
+    display: none;
+}
+
+#home {
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+    
+}
+
+.main-content{
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+
+}
+
+#home {
+    padding: 32px 16px;
+}
+
+
+
+
+/* CSS Responsivo */
+@media (min-width: 768px) {  /* a partir de: 768px */
+    #header {
+        position: fixed;
+        border-bottom: 1px solid #f3f3f3;
+        padding: 16px 80px;
+        background: #222;
+    }
+    .nav-mobile {
+        display: none;
+    }
+    .header-nav {
+        display: flex;
+    }
+    #home {
+        padding: 128px 96px 64px 96px; /* VOLTA AQUI */
+
+    }
+    .main-content {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+}
+
+/* 1200px */
+@media (min-width: 1200px) {
+    #home {
+        padding: 160px 96px 32px;
+    }
+}
+@media (min-width: 1400px) 
+
+
+
+
+{
+    
+}
+  
+    
+    
+
+
+    
