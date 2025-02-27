@@ -31,3 +31,27 @@ menuLinks.forEach(item => {
         item.classList.add("active");
     })
 })
+
+// Efeito de rolagem suave para os botões de inscrição
+document.getElementById('cta-button').addEventListener('click', function() {
+    document.querySelector('.cta').scrollIntoView({
+        behavior: 'smooth'
+    });
+});
+
+document.getElementById('cta-button-2').addEventListener('click', function() {
+    alert('Inscrição realizada com sucesso!');
+});
+
+// Efeito de luz ao passar o mouse sobre os cards
+const cards = document.querySelectorAll('.benefit-card, .testimonial-card');
+
+cards.forEach(card => {
+    card.addEventListener('mouseenter', () => {
+        card.style.boxShadow = '0 0 20px rgba(255, 111, 97, 0.7)';
+    });
+
+    card.addEventListener('mouseleave', () => {
+        card.style.boxShadow = '0 4px 8px rgba(0, 0, 0, 0.3)';
+    });
+});
