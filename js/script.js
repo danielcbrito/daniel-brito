@@ -285,50 +285,7 @@ document.getElementById('contactForm').addEventListener('submit', function (even
     }, 3000);
 });
 
-// Função para ajustar o layout dinamicamente
-function ajustarLayout() {
-    const larguraTela = window.innerWidth;
 
-    // Exemplo 1: Ajustar o tamanho do texto
-    const elementosTexto = document.querySelectorAll('h1, h2, h3, p');
-    elementosTexto.forEach(elemento => {
-        if (larguraTela < 768) {
-            elemento.style.fontSize = '90%'; // Reduz o tamanho do texto em mobile
-        } else {
-            elemento.style.fontSize = ''; // Volta ao tamanho original em desktop
-        }
-    });
-
-    // Exemplo 2: Ajustar o layout de um container específico
-    const container = document.querySelector('.container'); // Substitua pelo seu container
-    if (container) {
-        if (larguraTela < 768) {
-            container.style.flexDirection = 'column'; // Coluna em mobile
-        } else {
-            container.style.flexDirection = 'row'; // Linha em desktop
-        }
-    }
-
-    // Exemplo 3: Ajustar o padding de um elemento
-    const header = document.querySelector('header');
-    if (header) {
-        if (larguraTela < 768) {
-            header.style.padding = '1rem'; // Padding menor em mobile
-        } else {
-            header.style.padding = '2rem'; // Padding maior em desktop
-        }
-    }
-
-    // Exemplo 4: Esconder/Mostrar elementos
-    const elementoOpcional = document.querySelector('.opcional');
-    if (elementoOpcional) {
-        if (larguraTela < 768) {
-            elementoOpcional.style.display = 'none'; // Esconde em mobile
-        } else {
-            elementoOpcional.style.display = 'block'; // Mostra em desktop
-        }
-    }
-}
 
 // Exemplo: Adicionar uma animação ao carregar a página
 document.addEventListener('DOMContentLoaded', function () {
