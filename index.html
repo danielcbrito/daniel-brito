@@ -3,24 +3,33 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Seu Nome - Curso de Renda Extra</title>
+    <title>Curso de Renda Extra - [Seu Nome]</title>
     <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
-    <!-- Cabeçalho Hero -->
-    <header id="hero">
-        <div class="hero-content">
-            <h1 class="titulo-principal">Daniel Brito</h1>
-            <p class="subtitulo">A cada clique, uma nova história</p>
-            <a href="#sobre" class="btn-saiba-mais" class="video">Saiba Mais</a>
-        </div>
-        <div class="hero-background">
-            <div class="background-slide active" style="background-image: url('https://via.placeholder.com/1920x1080/6a11cb/ffffff?text=Foto+1');"></div>
-            <div class="background-slide" style="background-image: url('https://via.placeholder.com/1920x1080/2575fc/ffffff?text=Foto+2');"></div>
-            <div class="background-slide" style="background-image: url('https://via.placeholder.com/1920x1080/ff6f61/ffffff?text=Foto+3');"></div>
+    <header class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <div class="text-content">
+                    <h1>Gere Renda Extra com um Método Comprovado!</h1>
+                    <p class="subtitle">Aprenda as estratégias que eu usei para ganhar <strong>R$ 5.000/mês</strong> em apenas 3 meses.</p>
+                    <ul class="benefits">
+                        <li>✅ Método passo a passo</li>
+                        <li>✅ Suporte individual</li>
+                        <li>✅ Garantia de 7 dias</li>
+                    </ul>
+                    <a href="#preco" class="btn">Quero Me Inscrever Agora!</a>
+                </div>
+                <div class="image-content">
+                    <img src="sua-foto.jpg" alt="" class="hero-image">
+                </div>
+            </div>
         </div>
     </header>
+
+    <script src="script.js"></script>
+</body>
+</html>
 
    
 </html>
@@ -85,41 +94,7 @@
             <iframe src="https://www.youtube.com/embed/S5EIvFRvRiE" title="REVELADO: A NOVA ONDA DO MERCADO DIGITAL PARA 2025 (Dinheiro online)" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
         </div>
 
-
-    <!-- Seção de Projetos -->
-    <section id="projetos">
-        <div class="container">
-
-            <div class="projetos-grid">
-                <!-- Projeto 1 -->
-                <div class="projetos-card">
-                    <img src="projetos.jpg" alt="Projeto 1">
-                    <h3>Projeto 1</h3>
-                    <p>Descrição breve do Projeto 1. O que foi feito e quais tecnologias foram usadas.</p>
-                    <a href="#" class="projetos-link">Ver mais</a>
-                </div>
-
-                <!-- Projeto 2 -->
-                <div class="projetos-card">
-                    <img src="projetos.jpg" alt="Projeto 2">
-                    <h3>Projeto 2</h3>
-                    <p>Descrição breve do Projeto 2. O que foi feito e quais tecnologias foram usadas.</p>
-                    <a href="#" class="projetos-link">Ver mais</a>
-                </div>
-
-                <!-- Projeto 3 -->
-                <div class="projetos-card">
-                    <img src="projetos.jpg" alt="Projeto 3">
-                    <h3>Projeto 3</h3>
-                    <p>Descrição breve do Projeto 3. O que foi feito e quais tecnologias foram usadas.</p>
-                    <a href="#" class="projetos-link">Ver mais</a>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- JavaScript -->
-    <script src="script.js"></script>
+    
 </body>
 </html>
 
@@ -161,9 +136,9 @@
         <div class="contador">
             <p>Promoção termina em:</p>
             <div id="timer">
-                <span id="horas">00</span>h
-                <span id="minutos">00</span>m
-                <span id="segundos">00</span>s
+                <span id="horas">23</span>h
+                <span id="minutos">59</span>m
+                <span id="segundos">59</span>s
             </div>
         </div>
         <ul class="beneficios">
@@ -273,7 +248,7 @@
                     Experimente o curso sem riscos! Se você não ficar satisfeito, devolvemos 100% do seu dinheiro.
                     <strong>Sem perguntas, sem burocracia.</strong>
                 </p>
-                <a href="#inscricao" class="btn-garantia">Quero Garantir Minha Vaga!</a>
+                <a href="#inscricao" class="btn-garantia">Quero Minha Vaga!</a>
             </div>
             <div class="garantia-imagem">
                 <img src="selo/10002431-removebg-preview.png">
@@ -298,6 +273,43 @@
             </div>
         </div>
     </section>
+
+    <!-- contato -->
+
+    <!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulário de Contato</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="contato">
+        <h2>Fale Conosco</h2>
+        <form id="contactForm">
+            <div class="form-group">
+                <label for="nome">Nome:</label>
+                <input type="text" id="nome" name="nome" required>
+            </div>
+            <div class="form-group">
+                <label for="email">E-mail:</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+            <div class="form-group">
+                <label for="duvida">Dúvida:</label>
+                <textarea id="duvida" name="duvida" rows="4" required></textarea>
+            </div>
+            <button type="submit" class="btn">Enviar</button>
+        </form>
+        <div id="successMessage" class="success-message">
+            Mensagem enviada com sucesso!
+        </div>
+    </div>
+</body>
+</html>
+
+
 
     <!-- Scripts -->
     <script src="script.js"></script>
