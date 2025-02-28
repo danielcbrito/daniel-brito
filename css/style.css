@@ -2,253 +2,113 @@
 @import url('https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible+Next:ital,wght@0,200..800;1,200..800&family=Monomakh&family=Roboto:ital,wght@0,100..900;1,100..900&family=Shafarik&display=swap');
 
 
-/* Definir cores tema Dark */
 
-/* Fonts */
-/* :root{
-    --titulo: "Atkinson Hyperlegible Next", serif;
-    --subtitulo: ;
-    --h1: "Monomakh", serif;
-    --paragrafos: ;
-}
-    */  
-
-:root,
-:root[data-theme="dark"] {
-
-    --bg-body: #222;
-    --cor-texto: #eee;
-
-    --bg-header: #222;
-    --icone-tema: #eeeeee;
-
-    --cor-borda: #eee;
-
-    --cor-txt-menu: #eee;
-    --txt-menu-hover: #eee;
-
-    --texto-opaco: #b3b3b3;
-
-    --btn: #eee;
-    --hover: #b5b5b5 ; 
-}
-
-/* Definir cores tema Light */
-:root[data-theme="light"] {
-
-    --bg-body: #dfdfdf;
-    --cor-texto: #222;
-
-    --bg-header: #dfdfdf;
-    --icone-tema: #222;
-
-    --cor-borda: #222;
-
-    --cor-txt-menu: #222;
-    --txt-menu-hover: #222;
-
-    --texto-opaco: #b3b3b3;
-
-    --btn: #222;
-    --hover: #747474;
-}
-
-
-/* reset css */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-html[data-theme='light'] .logo {
-    filter: invert(1);
-}
-
-body {
-    background: var(--bg-body); /* cor fundo */
-    color: var(--cor-texto);  /* cor texto */
-}
-
-h1 {
-    font-size: 40px;
-    font-weight: 200;
-    font-family: "Atkinson Hyperlegible Next", serif;
-    letter-spacing: 1px;
-}
-
-h2 {
-    font-size:25px;
-    font-weight:600;
-    font-family: "Roboto Condensed", serif;
-    text-align:center;
-    text-shadow: 1px 1px 5px rgb(194, 191, 191) ;
-}
-
-b {
-    font-weight: 800;
-}
-
-i {
-    color: var(--icone-tema);
-    font-size: 20px; /* tamanho do texto */
-}
-
-.frase{
-    font-size: 30px;
-    font-weight: 0;
-    letter-spacing: 1px;
-    color: #25a2eb;
-    
-
-}
-
-#header {
+/* Cabeçalho Hero */
+#hero {
+    height: 100vh;
     display: flex;
-    flex-flow: row wrap;
-    justify-content: space-between;
     align-items: center;
-    width: 100%;
-    /* background: var(--bg-header); */
-    padding: 8px 16px;
+    justify-content: center;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.hero-content {
+    position: relative;
     z-index: 2;
+    animation: fadeIn 2s ease-in-out;
 }
 
-.header-logo .logo {
-    width: 3.5rem;
-    height: 3.5rem;
-}
-
-.menu { 
-    display: flex;
-    align-items: center;
-    gap: 25px;
-    list-style: none;
-}
-
-.menu-mobile {  /* < nav > */
-    width: 100vw;  /* viewport width */
-    position: fixed;
-    bottom: 0;
-    justify-content: space-between;
-    border-top: 1px solid var(--cor-borda);
-}
-
-.menu-item {
-    width: 100%;
-}
-
-.menu-link { 
-    display: flex;
-    text-decoration: none;
-}
-
-.menu-texto {
-    font-size: 20px;
+.titulo-principal {
+    font-size: 4rem;
+    margin-bottom: 20px;
     text-transform: uppercase;
+    letter-spacing: 4px;
+    animation: slideInDown 1.5s ease-in-out;
 }
 
-.menu-mobile .menu-link {
-    flex-direction: column;
-    justify-content: center;
-    padding: 7px 15px;
+.subtitulo {
+    font-size: 1.5rem;
+    margin-bottom: 30px;
+    animation: slideInUp 1.5s ease-in-out;
 }
 
-.menu-link.active .menu-icone,
-.menu-link.active .menu-texto,
-.menu-link:hover .menu-icone,
-.menu-link:hover .menu-texto{
-    color: var(--txt-menu-hover);
-    font-weight: 800;
-}
-
-/* não selecionados */
-.menu-icone,
-.menu-texto{ 
-    color: var(--texto-opaco);
-    font-weight: 400;
-}
-
-/* .menu-link .menu-texto:hover,
-.menu-link .menu-icone:hover {
-    font-size: 22px;
-} */
-
-.menu-icone {
-    font-size: 25px;
-}
-
-.menu-principal {
-    gap: 20px;
-}
-
-.header-nav {
-    display: none;
-}
-
-#toggleTheme {
-    font-size: 20px;
-    color: var(--icone-tema);
-    /* color: red; */
-    cursor: pointer;
-    transition: ease-in-out .6s;
-}
-
-/* Home */
-#home {
-    display: flex;
-    flex-direction: column;
-    gap: 32px;
-}
-
-.main-content {
-    display: flex;
-    flex-direction: column;
-    gap: 25px;
-}
-
-
-/* btn */
-.btn {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 5px;
-    background: transparent;
-    width: 100%;
-    border-radius: 10px;
+.btn-saiba-mais {
+    background: #ff6f61;
+    color: #fff;
+    padding: 15px 30px;
     border: none;
-    padding: 8px 10px;
-    cursor: pointer;
-}
-
-.btn-primary {
-    border: 1px solid var(--btn);
-}
-
-.btn span {
-    color: var(--btn);
-    font-size: 16px;
-    text-transform: uppercase;
-}   
-
-.btn i {
-    font-size: 14px;
-}
-
-.btn:hover{
-    transform: scale(1.01);
-    transition: ease-in-out .4s;
-}
-
-.btn:hover span {
-    color: var(--hover);
-}
-
-a {
+    border-radius: 5px;
     text-decoration: none;
+    font-size: 1.2rem;
+    font-weight: bold;
+    transition: background 0.3s ease, transform 0.3s ease;
+    animation: fadeIn 2.5s ease-in-out;
 }
 
+.btn-saiba-mais:hover {
+    background: #ff3b2f;
+    transform: scale(1.05);
+}
+
+/* Fundo Dinâmico */
+.hero-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+}
+
+.background-slide {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    opacity: 0;
+    transition: opacity 1.5s ease-in-out;
+}
+
+.background-slide.active {
+    opacity: 1;
+}
+
+/* Animações */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes slideInDown {
+    from {
+        transform: translateY(-100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@keyframes slideInUp {
+    from {
+        transform: translateY(100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
 .video iframe {
     width: 100%;
     aspect-ratio: 16/9;
@@ -271,7 +131,7 @@ a {
 
 /* Define a cor de fundo do site */
 body {
-    background-color: #252525; /* Cinza claro */
+    background-color: #000000; /* Cinza claro */
     margin: 0;
     padding: 0;
     font-family: Arial, sans-serif;
@@ -392,6 +252,288 @@ body {
 
 /* CURSO */
 
+/* Seção de Chamada para Ação (CTA) */
+#cta {
+    background: linear-gradient(135deg, #000000, #000000);
+    color: #ffffff;
+    padding: 60px 0;
+    text-align: center;
+}
+
+#cta h2 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+}
+
+#cta p {
+    font-size: 1.2rem;
+    margin-bottom: 30px;
+}
+
+#cta .btn-mudar-vida {
+    background: #ff6f61;
+    color: #fff;
+    padding: 15px 30px;
+    border: none;
+    border-radius: 5px;
+    text-decoration: none;
+    font-size: 1.2rem;
+    font-weight: bold;
+    transition: background 0.3s ease, transform 0.3s ease;
+}
+
+#cta .btn-mudar-vida:hover {
+    background: #ff3b2f;
+    transform: scale(1.05);
+}
+
+
+/* Reset básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    line-height: 1.6;
+    background-color: #121212; /* Fundo escuro */
+    color: #ffffff; /* Texto branco */
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Cabeçalho */
+header {
+    background: #1e1e1e; /* Fundo escuro */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header .logo h1 {
+    font-size: 1.5rem;
+    color: #ffffff;
+}
+
+header nav ul {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+header nav ul li a {
+    text-decoration: none;
+    color: #ffffff;
+    font-weight: bold;
+}
+
+header nav ul li a.btn-inscrever {
+    background: #ff6f61;
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 5px;
+}
+
+.menu-mobile {
+    display: none;
+    color: #fff;
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
+/* Hero Section */
+#hero {
+    background: linear-gradient(135deg, #000000, #000000);
+    color: #fff;
+    padding: 60px 0;
+}
+
+#hero .container {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+    flex-wrap: wrap;
+}
+
+#hero .hero-text {
+    flex: 1;
+    min-width: 300px;
+}
+
+#hero .hero-text h2 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+}
+
+#hero .hero-text p {
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+}
+
+#hero .hero-text .btn-inscrever {
+    background: #ff6f61;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    text-decoration: none;
+    font-size: 1rem;
+}
+
+#hero .hero-image img {
+    max-width: 100%;
+    border-radius: 10px;
+}
+
+/* Cards */
+.cards {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+}
+
+.card {
+    background: #1e1e1e;
+    border: 1px solid #333;
+    border-radius: 10px;
+    padding: 20px;
+    width: 100%;
+    max-width: 300px;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.5);
+}
+
+.card i {
+    font-size: 2rem;
+    color: #eb4b1a;
+    margin-bottom: 10px;
+}
+
+.card h3 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+}
+
+.card p {
+    font-size: 1rem;
+    color: #3fb44e;
+}
+
+/* Seção de Depoimentos */
+#depoimentos {
+    background: #1e1e1e;
+    padding: 40px 0;
+    text-align: center;
+}
+
+#depoimentos h2 {
+    font-size: 2rem;
+    margin-bottom: 40px;
+    color: #fff;
+}
+
+.depoimentos-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+}
+
+.depoimento-card {
+    background: #333;
+    border-radius: 10px;
+    padding: 20px;
+    width: 100%;
+    max-width: 300px;
+    text-align: left;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.depoimento-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.5);
+}
+
+.depoimento-texto p {
+    font-style: italic;
+    color: #ccc;
+    margin-bottom: 20px;
+}
+
+.depoimento-autor {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.depoimento-autor img {
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+}
+
+.depoimento-autor span {
+    font-weight: bold;
+    color: #fff;
+}
+
+
+
+/* Rodapé */
+footer {
+    background: #1e1e1e;
+    color: #fff;
+    text-align: center;
+    padding: 20px 0;
+}
+
+footer .social-links a {
+    color: #fff;
+    margin: 0 10px;
+    font-size: 1.2rem;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    header nav {
+        display: none;
+    }
+
+    .menu-mobile {
+        display: block;
+    }
+
+    #hero .container {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .cards {
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
 /* Reset básico */
 * {
     margin: 0;
@@ -406,14 +548,15 @@ body {
     line-height: 1.6;
 }
 
+
 header {
-    background: url('sua-foto-de-fundo.jpg') no-repeat center center/cover;
+   
     height: 100vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+   
+   
     text-align: center;
     position: relative;
+    color: #000;
 }
 
 .header-overlay {
@@ -523,5 +666,234 @@ footer {
     .benefit-card, .testimonial-card {
         width: 100%;
         margin-bottom: 20px;
+    }
+}
+
+/* Seção de Preço Promocional */
+#preco {
+    background: #1e1e1e;
+    padding: 40px 0;
+    text-align: center;
+}
+
+.preco-card {
+    background: #333;
+    border-radius: 10px;
+    padding: 30px;
+    max-width: 400px;
+    margin: 0 auto;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+}
+
+.preco-card h3 {
+    font-size: 1.8rem;
+    margin-bottom: 20px;
+    color: #18d331;
+}
+
+.preco-card .preco-original {
+    text-decoration: line-through;
+    color: #ccc;
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+}
+
+.preco-card .preco-promocional .preco {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: #ffffff;
+    margin-bottom: 10px;
+}
+
+.preco-card .preco-promocional .parcelamento {
+    font-size: 1rem;
+    color: #ccc;
+    margin-bottom: 20px;
+}
+
+.preco-card .contador {
+    background: #444;
+    border-radius: 5px;
+    padding: 10px;
+    margin-bottom: 20px;
+}
+
+.preco-card .contador p {
+    font-size: 1rem;
+    color: #ffffff;
+    margin-bottom: 10px;
+}
+
+.preco-card .contador #timer {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #f10000;
+}
+
+.preco-card .beneficios {
+    list-style: none;
+    text-align: left;
+    margin-bottom: 20px;
+}
+
+.preco-card .beneficios li {
+    margin-bottom: 10px;
+    color: #18d331;
+}
+
+.preco-card .beneficios li i {
+    color: #ffffff;
+    margin-right: 10px;
+}
+
+.preco-card .btn-inscrever {
+    background: #18d331;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    text-decoration: none;
+    font-size: 1rem;
+    display: inline-block;
+    width: 100%;
+    text-align: center;
+    transition: background 0.3s ease;
+}
+
+.preco-card .btn-inscrever:hover {
+    background: #18d331;
+}
+
+.vermelho{
+    color: red;
+}
+
+
+
+/* Seção de Garantia */
+#garantia {
+    background: linear-gradient(135deg, #000000, #000000);
+    color: #fff;
+    padding: 60px 0;
+}
+
+.garantia-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.garantia-content {
+    max-width: 600px;
+    animation: fadeInLeft 1.5s ease-in-out;
+}
+
+.garantia-icon i {
+    font-size: 4rem;
+    color: #ff6f61;
+    margin-bottom: 20px;
+}
+
+.garantia-content h2 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+}
+
+.garantia-content p {
+    font-size: 1.2rem;
+    margin-bottom: 30px;
+}
+
+.garantia-content .btn-garantia {
+    background: #ff6f61;
+    color: #fff;
+    padding: 15px 30px;
+    border: none;
+    border-radius: 5px;
+    text-decoration: none;
+    font-size: 1.2rem;
+    font-weight: bold;
+    transition: background 0.3s ease, transform 0.3s ease;
+}
+
+.garantia-content .btn-garantia:hover {
+    background: #ff3b2f;
+    transform: scale(1.05);
+}
+
+.garantia-imagem img {
+    max-width: 100%;
+    border-radius: 10px;
+    animation: fadeInRight 1.5s ease-in-out;
+}
+
+/* Selos de Confiança */
+#selos {
+    background: #fff;
+    padding: 40px 0;
+}
+
+.selos-container {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.selo {
+    text-align: center;
+    animation: fadeInUp 1.5s ease-in-out;
+}
+
+.selo i {
+    font-size: 2.5rem;
+    color: #6a11cb;
+    margin-bottom: 10px;
+}
+
+.selo p {
+    font-size: 1.1rem;
+    color: #333;
+}
+
+/* Animações */
+@keyframes fadeInLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes fadeInRight {
+    from {
+        opacity: 0;
+        transform: translateX(50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
     }
 }
