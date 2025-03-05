@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meu Site de Alto Padrão</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <!-- Cabeçalho -->
+    <header>
+        <nav class="navbar">
+            <!-- Logo -->
+            <div class="logo">
+                <img src="logo/3-removebg-preview.png" alt="Minha Logo">
+            </div>
+
+            <!-- Menu de Navegação -->
+            <ul class="nav-links" id="nav-links">
+                <li><a href="#home">Início</a></li>
+                <li><a href="#sobre">Sobre</a></li>
+                <li><a href="#servicos">Serviços</a></li>
+                <li><a href="#contato">Contato</a></li>
+            </ul>
+
+            <!-- Ícone do Menu Hambúrguer (para mobile) -->
+            <div class="hamburger" id="hamburger">
+                <i class="fas fa-bars"></i>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Seção Hero -->
+    <section id="hero">
+        <div class="hero-content">
+            <h1>Transformando Ideias em Realidade Digital</h1>
+            <p>Design e desenvolvimento de alto padrão para resultados excepcionais.</p>
+            <a href="#portfolio" class="cta-button">Explore Meu Trabalho</a>
+        </div>
+        <div class="hero-overlay"></div>
+    </section>
+
+    <!-- Seção Sobre Mim -->
+    <section id="sobre">
+        <div class="sobre-content">
+            <!-- Foto profissional -->
+            <div class="foto-perfil">
+                <img src="sobre mim/c2af2ce5-ef1a-4b22-8d93-1f1c7b91ccde.jpg" alt="Foto Profissional">
+            </div>
+            <!-- Biografia -->
+            <div class="bio">
+                <h2>Sobre Mim</h2>
+                <p>
+                    
+                    Olá, eu sou Daniel Brito, empresário e fundador da Ippress. Minha missão é ajudar empresas a crescer através de soluções estratégicas, negociação de projetos e design web. Com experiência prática em gestão empresarial, atuo como facilitador de oportunidades, criando websites modernos e funcionais que impulsionam negócios.
+                    
+                    Na Ippress, combinamos criatividade, tecnologia e estratégia para transformar ideias em resultados. Se você busca um parceiro comprometido com a qualidade e focado no sucesso do seu negócio, vamos conversar!
+                </p>
+                
+                <!-- Botão de chamada para ação -->
+                <a href="#contato" class="cta-button">Vamos Conversar</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Seção Serviços -->
+    <section id="servicos">
+        <h2>Meus Serviços</h2>
+        <div class="servicos-container">
+            <!-- Serviço 1: Desenvolvimento Web e Design -->
+            <div class="servico">
+                <div class="icone"><i class="fas fa-paint-brush"></i></div>
+                <h3>Desenvolvimento Web e Design</h3>
+                <p class="descricao">Criação de websites modernos, responsivos e focados em conversões, com design atraente e funcionalidades intuitivas.</p>
+                <a href="https://api.whatsapp.com/message/GLU2T4S7LISNL1?autoload=1&app_absent=0" class="agendar-btn">Solicitar Orçamento</a>
+            </div>
+    
+            <!-- Serviço 2: Negociação e Gestão de Projetos -->
+            <div class="servico">
+                <div class="icone"><i class="fas fa-handshake"></i></div>
+                <h3>Negociação e Gestão de Projetos</h3>
+                <p class="descricao">Atuação como intermediário estratégico e gestor de projetos, garantindo viabilidade, organização e resultados alinhados aos objetivos do negócio.</p>
+                <a href="https://api.whatsapp.com/message/GLU2T4S7LISNL1?autoload=1&app_absent=0" class="agendar-btn">Solicitar Orçamento</a>
+            </div>
+    
+            <!-- Serviço 3: Estratégias de Crescimento Empresarial -->
+            <div class="servico">
+                <div class="icone"><i class="fas fa-chart-line"></i></div>
+                <h3>Estratégias de Crescimento Empresarial</h3>
+                <p class="descricao">Consultoria e implementação de estratégias para impulsionar o crescimento e a eficiência do seu negócio.</p>
+                <a href="https://api.whatsapp.com/message/GLU2T4S7LISNL1?autoload=1&app_absent=0" class="agendar-btn">Solicitar Orçamento</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Seção Portfólio -->
+    <section id="portfolio">
+        <h2>Meus Projetos</h2>
+        <div class="carrossel-container">
+            <!-- Botões de Navegação -->
+            <button class="carrossel-btn anterior" onclick="moverCarrossel(-1)">&#10094;</button>
+            <button class="carrossel-btn proximo" onclick="moverCarrossel(1)">&#10095;</button>
+    
+            <!-- Carrossel de Projetos -->
+            <div class="carrossel">
+                <!-- Projeto 1 -->
+                <div class="projeto">
+                    <img src="https://via.placeholder.com/600x400" alt="Website para Empresa de Consultoria">
+                    <div class="projeto-info">
+                        <h3>Website para Empresa de Consultoria</h3>
+                        <p>Desenvolvimento de um site moderno e responsivo com foco na experiência do usuário.</p>
+                        <a href="#" target="_blank" class="projeto-link">Ver Projeto</a>
+                    </div>
+                </div>
+                <!-- Projeto 2 -->
+                <div class="projeto">
+                    <img src="https://via.placeholder.com/600x400" alt="E-commerce para Loja de Moda">
+                    <div class="projeto-info">
+                        <h3>E-commerce para Loja de Moda</h3>
+                        <p>Plataforma de e-commerce completa com integração de pagamentos e gestão de estoque.</p>
+                        <a href="#" target="_blank" class="projeto-link">Ver Projeto</a>
+                    </div>
+                </div>
+                <!-- Projeto 3 -->
+                <div class="projeto">
+                    <img src="https://via.placeholder.com/600x400" alt="Identidade Visual para Startup de Tecnologia">
+                    <div class="projeto-info">
+                        <h3>Identidade Visual para Startup</h3>
+                        <p>Desenvolvimento de identidade visual, incluindo logotipo e diretrizes de uso.</p>
+                        <a href="#" target="_blank" class="projeto-link">Ver Projeto</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Seção Contato -->
+    <section id="contato">
+        <h2>Contato</h2>
+        <form id="form-contato">
+            <input type="text" id="nome" placeholder="Seu Nome" required>
+            <input type="email" id="email" placeholder="Seu E-mail" required>
+            <textarea id="mensagem" placeholder="Sua Mensagem" required></textarea>
+            <button type="submit">Enviar Mensagem</button>
+        </form>
+        <div class="info-contato">
+            <p><i class="fas fa-envelope"></i> danielcbrito72@gmail.com</p>
+            <p><i class="fas fa-phone"></i> (11) 98257-3707 </p>
+            <div class="redes-sociais">
+                <a href="https://www.instagram.com/danielbrito.emp/"><i class="fab fa-instagram"></i></a>
+                <a href="www.linkedin.com/in/daniel-cavalcante-brito-b59a48294"><i class="fab fa-linkedin-in"></i></a>
+                <a href="https://www.tiktok.com/@danielbrito.mkt"><i class="fab fa-tiktok"></i></a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Rodapé -->
+    <footer>
+        <div class="logo">Minha Marca</div>
+        <nav>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#sobre">Sobre</a></li>
+                <li><a href="#portfolio">Portfólio</a></li>
+                <li><a href="#servicos">Serviços</a></li>
+                <li><a href="#contato">Contato</a></li>
+            </ul>
+        </nav>
+        <p>&copy; 2023 Minha Marca. Todos os direitos reservados.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
