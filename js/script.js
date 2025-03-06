@@ -59,3 +59,77 @@ function moverCarrossel(direction) {
     const offset = -currentIndex * 100;
     carrossel.style.transform = `translateX(${offset}%)`;
 }
+
+
+
+const hamburger = document.getElementById('hamburger');
+const navLinks = document.getElementById('nav-links');
+
+hamburger.addEventListener('click', () => {
+    navLinks.classList.toggle('active');
+});
+
+
+const form = document.getElementById('form-contato');
+
+form.addEventListener('submit', (e) => {
+    e.preventDefault();
+    const nome = document.getElementById('nome').value;
+    const email = document.getElementById('email').value;
+    const mensagem = document.getElementById('mensagem').value;
+
+    if (nome === '' || email === '' || mensagem === '') {
+        alert('Por favor, preencha todos os campos.');
+    } else {
+        alert('Mensagem enviada com sucesso!');
+        form.reset();
+    }
+});
+
+
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        document.querySelector(this.getAttribute('href')).scrollIntoView({
+            behavior: 'smooth'
+        });
+    });
+});
+
+const counters = document.querySelectorAll('.counter');
+
+counters.forEach(counter => {
+    const target = +counter.getAttribute('data-target');
+    const increment = target / 100;
+    let count = 0;
+
+    const updateCounter = () => {
+        if (count < target) {
+            count += increment;
+            counter.innerText = Math.ceil(count);
+            setTimeout(updateCounter, 20);
+        } else {
+            counter.innerText = target;
+        }
+    };
+
+    updateCounter();
+});
+
+const modal = document.getElementById('modal');
+const openModal = document.getElementById('open-modal');
+const closeModal = document.getElementById('close-modal');
+
+openModal.addEventListener('click', () => {
+    modal.style.display = 'block';
+});
+
+closeModal.addEventListener('click', () => {
+    modal.style.display = 'none';
+});
+
+window.addEventListener('click', (e) => {
+    if (e.target === modal) {
+        modal.style.display = 'none';
+    }
+});
