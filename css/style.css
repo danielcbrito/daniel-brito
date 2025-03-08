@@ -12,9 +12,6 @@ body {
     color: #e0e0e0;
 }
 
-
-
-
 /* Cabeçalho */
 .navbar {
     display: flex;
@@ -30,6 +27,7 @@ body {
     height: 70px;
 }
 
+/* Logo */
 .logo {
     position: absolute;
     left: 50%;
@@ -40,10 +38,12 @@ body {
     height: 80px;
 }
 
+/* Menu de navegação */
 .nav-links {
     display: flex;
     gap: 20px;
     list-style: none;
+    margin-right: 30px; /* Ajusta o espaço à direita */
 }
 
 .nav-links a {
@@ -59,57 +59,52 @@ body {
     transform: translateY(-2px);
 }
 
+/* Botão de hambúrguer */
 .hamburger {
     display: none;
     font-size: 1.8em;
     cursor: pointer;
+    color: #e0e0e0;
 }
 
-/* Responsividade: Menu no mobile */
+/* Responsividade para telas pequenas */
 @media (max-width: 768px) {
     .navbar {
-        justify-content: flex-start;
-        padding: 15px;
+        justify-content: space-between;
+        padding: 0 15px;
     }
 
     .logo {
-        position: relative;
-        left: auto;
+        position: static;
         transform: none;
-        margin-left: auto;
-        margin-right: auto;
-    }
-
-    .logo img {
-        height: 80px;
+        margin-left: 0;
     }
 
     .nav-links {
-        display: none;
+        display: none; /* O menu estará oculto por padrão */
         flex-direction: column;
         position: absolute;
-        top: 70px;
-        left: 0;
-        width: 100%;
+        top: 70px; /* Ajuste para o espaço abaixo do cabeçalho */
+        right: 0;
         background-color: #1A1A1A;
-        padding: 20px;
+        width: 100%;
+        text-align: center;
+        z-index: 1000;
+        padding: 20px 0;
     }
 
     .nav-links.active {
-        display: flex;
+        display: flex; /* Torna o menu visível quando a classe active for adicionada */
     }
 
     .hamburger {
-        display: block;
-        position: absolute;
-        left: 20px;
-        top: 20px;
-        z-index: 1100;
+        display: block; /* Mostra o botão de hambúrguer em telas pequenas */
+        z-index: 1002; /* Garante que o botão fique visível */
     }
 }
 
 /* Seção Hero */
-#hero {
+#home {
     height: 100vh;
     background: url('hero-bg.jpg') no-repeat center center/cover;
     display: flex;
@@ -163,7 +158,6 @@ body {
     background-color: rgba(0, 0, 0, 0.5);
 }
 
-/* Seção Sobre Mim */
 /* Seção Sobre Mim */
 #sobre {
     padding: 100px 10%;
@@ -311,20 +305,6 @@ body {
 }
 
 /* Seção Portfólio */
-/* Reset básico */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-body {
-    font-family: 'Poppins', sans-serif;
-    background-color: #000000; /* Fundo preto */
-    color: #e0e0e0;
-}
-
-/* Estilos para a seção de projetos */
 .projetos-section {
     padding: 60px 20px;
     background-color: #000000;
@@ -410,25 +390,7 @@ body {
     }
 }
 
-
-
-
-
 /* Seção Depoimentos */
-/* Reset básico */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-body {
-    font-family: 'Poppins', sans-serif;
-    background-color: #121212; /* Fundo escuro */
-    color: #e0e0e0;
-}
-
-/* Estilos para a seção de depoimentos */
 .depoimentos-section {
     padding: 80px 20px;
     background-color: #181818;
@@ -622,76 +584,21 @@ footer {
     position: relative;
     width: 100%;
     bottom: 0;
-  }
-  
-  .footer-container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    max-width: 1200px;
-    margin: 0 auto;
-    flex-wrap: wrap; /* Permite que os itens se movam para a próxima linha se necessário */
-  }
-  
-  .footer-nav ul {
-    list-style: none;
-    display: flex;
-    gap: 20px;
-  }
-  
-  .footer-nav li {
-    display: inline;
-  }
-  
-  .footer-nav a {
-    color: #FFD700;
-    text-decoration: none;
-    font-size: 1.1em;
-  }
-  
-  .footer-nav a:hover {
-    color: #ffcc00;
-  }
-  
-  .footer-social {
-    display: flex;
-    gap: 20px;
-  }
-  
-  .footer-social a {
-    color: #FFD700;
-    font-size: 1.5em;
-    transition: transform 0.3s ease;
-  }
-  
-  .footer-social a:hover {
-    transform: scale(1.1);
-  }
-  
-  .footer-copyright p {
-    font-size: 0.9em;
-    margin-top: 20px;
-    color: #ccc;
-    font-weight: 500;
-  }
-  
-  /* Responsividade para telas pequenas */
- /* Rodapé - Menu de navegação no mobile */
+}
+
 .footer-container {
     display: flex;
     justify-content: space-between;
     align-items: center;
     max-width: 1200px;
     margin: 0 auto;
-    flex-wrap: wrap;
-    padding: 20px 0; /* Ajuste no preenchimento */
+    flex-wrap: wrap; /* Permite que os itens se movam para a próxima linha se necessário */
 }
 
 .footer-nav ul {
     list-style: none;
     display: flex;
     gap: 20px;
-    flex-wrap: wrap; /* Permite quebrar a linha para telas pequenas */
 }
 
 .footer-nav li {
@@ -708,81 +615,131 @@ footer {
     color: #ffcc00;
 }
 
-/* Responsividade no rodapé */
+.footer-social {
+    display: flex;
+    gap: 20px;
+}
+
+.footer-social a {
+    color: #FFD700;
+    font-size: 1.5em;
+    transition: transform 0.3s ease;
+}
+
+.footer-social a:hover {
+    transform: scale(1.1);
+}
+
+.footer-copyright p {
+    font-size: 0.9em;
+    margin-top: 20px;
+    color: #ccc;
+    font-weight: 500;
+}
+
+/* Responsividade para telas pequenas */
 @media (max-width: 768px) {
     .footer-container {
         flex-direction: column;
         text-align: center;
-    }
-
-    .footer-nav ul {
-        flex-direction: column;
-        gap: 15px;
-    }
-
-    .footer-social {
-        justify-content: center;
-        gap: 15px;
-        margin-top: 20px;
-    }
-
-    .footer-social a {
-        font-size: 1.2em; /* Reduzindo o tamanho para dispositivos móveis */
-    }
-
-    .footer-copyright p {
-        font-size: 0.8em;
-    }
-}
-
-
-/* FOOTER (RODAPÉ) */
-.footer {
-    background-color: #1A1A1A;
-    color: #E0E0E0;
-    text-align: center;
-    padding: 20px 10px;
-    position: relative;
-    bottom: 0;
-    width: 100%;
-}
-
-.footer-content {
-    max-width: 1200px;
-    margin: 0 auto;
-}
-
-.footer-nav {
-    margin-top: 10px;
-}
-
-.footer-nav a {
-    color: #FFD700;
-    text-decoration: none;
-    margin: 0 10px;
-    font-size: 14px;
-    transition: color 0.3s ease;
-}
-
-.footer-nav a:hover {
-    color: #FFFFFF;
-}
-
-/* RESPONSIVIDADE */
-@media (max-width: 768px) {
-    .footer {
         padding: 15px;
     }
 
-    .footer-nav a {
-        display: block;
-        margin: 5px 0;
+    .footer-nav {
+        justify-content: center;
+        gap: 10px;
+    }
+
+    .footer-nav ul {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 10px;
+    }
+
+    .footer-nav li {
+        display: inline-block;
     }
 }
 
+/* Estilos gerais para a seção de contato */
 
+/* Estilos gerais para a seção de contato */
+#contato {
+    padding: 40px 20px;
+    background-color: #000000;
+   
+}
 
+#contato .container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
 
+#contato h2 {
+    font-size: 1.8rem;
+    font-weight: 600;
+    color: #fcfcfc;
+    margin-bottom: 20px;
+}
 
-
+#contato p {
   
+    margin-bottom: 30px;
+}
+
+
+/* Estilos para as informações de contato */
+.contato-info {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 40px; /* Espaço maior entre os itens */
+    flex-wrap: wrap; /* Permite quebrar linha em telas pequenas */
+}
+
+.contato-item {
+    display: flex;
+    align-items: center; /* Alinha o ícone e o texto na mesma linha */
+    gap: 10px; /* Espaço entre o ícone e o texto */
+    font-size: 1rem;
+}
+
+.contato-item i {
+    font-size: 1.5rem; /* Ícones menores */
+    color: #007bff;
+}
+
+.contato-item i:hover {
+    color: #0056b3;
+}
+
+.contato-item p {
+    font-size: 1rem;
+    color: #666;
+    margin-bottom: 0;
+}
+
+.contato-item a {
+    font-size: 1rem;
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.contato-item a:hover {
+    color: #0056b3;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .contato-info {
+        flex-direction: column; /* Em telas menores, os itens são empilhados */
+        gap: 20px; /* Menor espaço entre os itens */
+    }
+    
+    .contato-item {
+        justify-content: center; /* Centraliza os ícones e textos em telas pequenas */
+    }
+}

@@ -82,3 +82,9 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 });
+
+
+// Função para alternar a classe 'active' quando o hambúrguer for clicado
+hamburger.addEventListener("click", () => {
+    navLinks.classList.toggle("active");
+});
