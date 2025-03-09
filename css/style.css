@@ -526,149 +526,103 @@ body {
     }
 }
 
-/* Seção Contato */
-#contato {
-    padding: 60px 20px;
-    background-color: #121212;
-    text-align: center;
-}
-
-.contato-container {
+/* Limitando o escopo ao container do agendamento */
+/* Estilos exclusivos para o sistema de agendamento */
+.agendamento-container {
     display: flex;
     justify-content: center;
-    gap: 30px;
-    max-width: 1200px;
-    margin: 0 auto;
+    align-items: center;
+    height: 100vh;
 }
 
-form {
+.agendamento-box {
+    background: #000000;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    width: 100%;
+    max-width: 400px;
+    text-align: center;
+}
+
+.agendamento-box h2 {
+    margin-bottom: 20px;
+    color: #ffffff;
+    font-size: 24px;
+}
+
+.agendamento-form {
     display: flex;
     flex-direction: column;
-    gap: 12px;
+    gap: 15px;
+}
+
+.agendamento-form label {
+    font-weight: bold;
+    text-align: left;
+    font-size: 14px;
+}
+
+.agendamento-form input {
     width: 100%;
-    max-width: 450px;
+    padding: 10px;
+    border-radius: 6px;
+    border: 1px solid #ffffff;
+    font-size: 16px;
+    transition: border 0.3s;
 }
 
-form input,
-form textarea {
+.agendamento-form input:focus {
+    border: 1px solid #ffc400;
+    outline: none;
+}
+
+.agendamento-form button {
+    width: 100%;
     padding: 12px;
-    border: 1px solid #444;
-    border-radius: 8px;
-    font-size: 1em;
-    background-color: #333;
-    color: #f1f1f1;
-}
-
-form button {
-    background: linear-gradient(45deg, #FFD700, #C0C0C0); /* Gradiente de ouro e prata */
-    color: #000;
     border: none;
-    padding: 12px;
-    border-radius: 8px;
+    border-radius: 6px;
+    background: #ffbb00;
+    color: rgb(0, 0, 0);
+    font-size: 16px;
+    font-weight: bold;
     cursor: pointer;
-    font-size: 1.1em;
-    transition: background-color 0.3s ease, transform 0.3s ease;
-    box-shadow: 0 4px 15px rgba(255, 215, 0, 0.6); /* Brilho dourado */
+    transition: background 0.3s ease-in-out;
 }
 
-form button:hover {
-    background: linear-gradient(45deg, #FFB700, #AFAFAF); /* Efeito de hover mais dourado e prateado */
-    transform: translateY(-2px);
+.agendamento-form button:hover {
+    background: #ffbb00;
 }
 
-footer {
-    background-color: #1a1a1a;
-    color: #e0e0e0;
-    padding: 40px 20px;
-    text-align: center;
-    position: relative;
-    width: 100%;
-    bottom: 0;
-}
-
-.footer-container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    max-width: 1200px;
-    margin: 0 auto;
-    flex-wrap: wrap; /* Permite que os itens se movam para a próxima linha se necessário */
-}
-
-.footer-nav ul {
+.agendamento-lista {
     list-style: none;
-    display: flex;
-    gap: 20px;
-}
-
-.footer-nav li {
-    display: inline;
-}
-
-.footer-nav a {
-    color: #FFD700;
-    text-decoration: none;
-    font-size: 1.1em;
-}
-
-.footer-nav a:hover {
-    color: #ffcc00;
-}
-
-.footer-social {
-    display: flex;
-    gap: 20px;
-}
-
-.footer-social a {
-    color: #FFD700;
-    font-size: 1.5em;
-    transition: transform 0.3s ease;
-}
-
-.footer-social a:hover {
-    transform: scale(1.1);
-}
-
-.footer-copyright p {
-    font-size: 0.9em;
+    padding: 0;
     margin-top: 20px;
-    color: #ccc;
-    font-weight: 500;
 }
 
-/* Responsividade para telas pequenas */
-@media (max-width: 768px) {
-    .footer-container {
-        flex-direction: column;
-        text-align: center;
-        padding: 15px;
-    }
-
-    .footer-nav {
-        justify-content: center;
-        gap: 10px;
-    }
-
-    .footer-nav ul {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: center;
-        gap: 10px;
-    }
-
-    .footer-nav li {
-        display: inline-block;
-    }
+.agendamento-lista li {
+    background: #ffffff;
+    padding: 12px;
+    border-radius: 6px;
+    margin-top: 5px;
+    font-size: 14px;
+    text-align: left;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
+
+.agendamento-lista li:nth-child(odd) {
+    background: #ffffff;
+}
+
+
 
 /* Estilos gerais para a seção de contato */
 
 /* Estilos gerais para a seção de contato */
 #contato {
     padding: 40px 20px;
-    background-color: #000000;
-   
+    background-color: #000;
+    text-align: center;
 }
 
 #contato .container {
@@ -685,10 +639,10 @@ footer {
 }
 
 #contato p {
-  
+    color: #ccc;
+    font-size: 1rem;
     margin-bottom: 30px;
 }
-
 
 /* Estilos para as informações de contato */
 .contato-info {
@@ -704,11 +658,13 @@ footer {
     align-items: center; /* Alinha o ícone e o texto na mesma linha */
     gap: 10px; /* Espaço entre o ícone e o texto */
     font-size: 1rem;
+    color: #fff;
 }
 
 .contato-item i {
     font-size: 1.5rem; /* Ícones menores */
     color: #007bff;
+    transition: color 0.3s ease-in-out;
 }
 
 .contato-item i:hover {
@@ -717,19 +673,20 @@ footer {
 
 .contato-item p {
     font-size: 1rem;
-    color: #666;
+    color: #ccc;
     margin-bottom: 0;
 }
 
 .contato-item a {
     font-size: 1rem;
-    color: #ffffff;
+    color: #fff;
     text-decoration: none;
     font-weight: bold;
+    transition: color 0.3s ease-in-out;
 }
 
 .contato-item a:hover {
-    color: #0056b3;
+    color: #007bff;
 }
 
 /* Responsividade */
@@ -741,5 +698,28 @@ footer {
     
     .contato-item {
         justify-content: center; /* Centraliza os ícones e textos em telas pequenas */
+        text-align: center;
     }
+}
+
+footer {
+    background-color: #222222;
+    color: #fff;
+    text-align: center;
+    padding: 20px;
+    position: relative;
+    width: 100%;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+
+.footer-content p {
+    margin: 0;
+    font-size: 1rem;
+    font-weight: bold;
 }
