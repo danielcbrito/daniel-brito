@@ -1,5 +1,4 @@
 /* ESTILO GERAL */
-
 * {
     margin: 0;
     padding: 0;
@@ -10,13 +9,12 @@
 body {
     background-color: #000;
     height: 100vh;
+    overflow-x: hidden;
 }
 
 .interface {
     max-width: 1280px;
     margin: 0 auto;
-    padding: 0 20px;
-    /* Adicionado padding para evitar que o conteúdo encoste nas bordas em telas menores */
 }
 
 .flex {
@@ -86,7 +84,6 @@ header nav.menu-desktop ul li {
 
 .btn-abrir-menu {
     display: none;
-    /* Inicialmente oculto */
 }
 
 .btn-abrir-menu i {
@@ -99,23 +96,27 @@ header nav.menu-desktop ul li {
     height: 100vh;
     position: fixed;
     top: 0;
-    right: 0;
+    right: -20%; /* Ajustado para mais à direita */
     z-index: 99999;
-    width: 0%;
+    width: 70%;
     overflow: hidden;
-    transition: .5s;
+    transition: right 0.5s ease;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end; /* Alinha os itens à direita */
 }
 
 .menu-mobile.abrir-menu {
-    width: 70%;
+    right: 0;
 }
 
-.menu-mobile.abrir-menu~.overlay-menu {
+.menu-mobile.abrir-menu ~ .overlay-menu {
     display: block;
 }
 
 .menu-mobile .btn-fechar {
     padding: 20px 5%;
+    text-align: right;
 }
 
 .menu-mobile .btn-fechar i {
@@ -123,65 +124,40 @@ header nav.menu-desktop ul li {
     font-size: 30px;
 }
 
-.menu-mobile nav ul {
-    text-align: left;
-    /* Garante que o texto esteja alinhado à esquerda */
-    padding: 0;
-    /* Remove o padding padrão */
+.menu-mobile nav {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
-.menu-mobile nav ul li {
-    list-style: none;
-    /* Remove marcadores de lista */
-    margin: 0;
-    /* Remove margens padrão */
+.menu-mobile nav ul {
+    text-align: right;
+    padding: 0 20px;
 }
 
 .menu-mobile nav ul li a {
-    display: block;
-    /* Faz o link ocupar toda a largura do item */
-    padding: 10px 20px;
-    /* Adiciona algum padding para facilitar o toque */
-    text-decoration: none;
-    /* Remove sublinhado */
     color: #fff;
-    /* Cor do texto */
-    font-size: 1.2em;
-    /* Tamanho da fonte */
-    transition: background-color 0.3s;
-    /* Transição para o hover */
-}
-
-/* Estilo para quando passar o mouse ou focar no link */
-.menu-mobile nav ul li a:hover,
-.menu-mobile nav ul li a:focus {
-    background-color: #007FFF;
-    /* Cor de fundo ao passar o mouse */
-}
-
-/* Estilo para o botão de contato no menu mobile */
-.btn-contato-mobile {
+    font-size: 20px;
+    font-weight: 300;
+    padding: 20px 8%;
     display: block;
-    margin: 20px auto;
-    /* Centraliza o botão */
-    padding: 12px 30px;
-    background-color: #007FFF;
-    color: white;
-    font-size: 18px;
-    font-weight: 600;
-    border-radius: 30px;
-    text-align: center;
-    text-transform: uppercase;
-    border: none;
-    cursor: pointer;
-    transition: all 0.3s ease;
 }
 
-/* Efeito hover para o botão */
-.btn-contato-mobile:hover {
-    background-color: #005bb5;
-    transform: scale(1.05);
-    box-shadow: 0px 0px 15px rgba(0, 127, 255, 0.7);
+.menu-mobile nav ul li a:hover {
+    background-color: #007FFF;
+    color: #000;
+}
+
+.overlay-menu {
+    background-color: #000000df;
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 88888;
+    display: none;
 }
 
 /* ESTILO DO TOPO DO SITE */
@@ -214,6 +190,7 @@ section.topo-do-site .flex {
     position: relative;
     animation: flutuar 2s ease-in-out infinite alternate;
 }
+
 
 @keyframes flutuar {
     0% {
@@ -302,15 +279,11 @@ section.sobre .flex {
 /* ESTILO DO PORTFÓLIO */
 section.portfolio {
     padding: 80px 4%;
-    box-shadow: 0 0 40px 10px #ffffff1d;
 }
 
 section.portfolio .flex {
-    justify-content: center; /* Centraliza os itens horizontalmente */
-    align-items: center; /* Centraliza os itens verticalmente */
+    justify-content: space-around;
     margin-top: 60px;
-    flex-wrap: wrap; /* Permite que os itens quebrem para a próxima linha */
-    gap: 20px; /* Adiciona um espaçamento entre os itens */
 }
 
 .img-port {
@@ -404,27 +377,15 @@ footer {
 }
 
 footer .flex {
-    /*justify-content: space-between; Originalmente separava os elementos*/
-    flex-direction: column;
-    /*Empilha os elementos em coluna*/
-    align-items: center;
-    /*Centraliza os elementos horizontalmente*/
+    justify-content: space-between;
 }
 
 footer .line-footer {
     padding: 20px 0;
-    width: 100%;
-    /* Garante que a linha de rodapé ocupe toda a largura disponível */
-    text-align: center;
-    /*Centraliza o texto*/
 }
 
 .borda {
     border-top: 2px solid #007FFF;
-    width: 80%;
-    /* Limita a largura da borda */
-    margin: 0 auto;
-    /* Centraliza a borda */
 }
 
 footer .line-footer p i {
@@ -436,10 +397,9 @@ footer .line-footer p a {
     color: #fff;
 }
 
-/* Media Query para telas menores de 1020px */
 @media screen and (max-width: 1020px) {
 
-    /*Torna flex container */
+    /* CLASSES GERAIS */
     .flex {
         flex-direction: column;
     }
@@ -454,107 +414,125 @@ footer .line-footer p a {
     }
 
     /* CABEÇALHO */
-    .menu-desktop, .btn-contato {
-        display: none; /* Oculta o menu desktop e o botão de contato */
+    .menu-desktop,
+    .btn-contato {
+        display: none;
     }
 
-    /* Exibe o botão para abrir o menu mobile */
+    /* TOPO DO SITE */
+
+    section.topo-do-site .flex {
+        gap: 40px;
+    }
+
+    section.topo-do-site {
+        padding: 20px 8%;
+    }
+
+    .topo-do-site h1 {
+        font-size: 30px;
+    }
+
+    .topo-do-site .img-topo-site img {
+        width: 100%;
+    }
+
+    /* ESPECIALIDADES */
+    section.especiliadades {
+        padding: 40px 8%;
+    }
+
+    /* SOBRE */
+    section.sobre {
+        padding: 80px 8%;
+    }
+
+    .sobre .txt-sobre h2 {
+        font-size: 34px;
+        line-height: 35px;
+        text-align: center;
+    }
+
+    .btn-social {
+        text-align: center;
+    }
+
+    .img-sobre img {
+        width: 100%;
+    }
+
+    /* PORTFÓLIO */
+    section.portfolio {
+        padding: 80px 8%;
+    }
+
+    .img-port {
+        width: 100%;
+        max-width: 360px;
+        margin: 0 auto;
+    }
+
+    section.portfolio .flex {
+        gap: 60px;
+    }
+
+    /* RODAPÉ */
+    footer .flex {
+        flex-direction: column;
+        gap: 30px;
+    }
+
+    footer .line-footer {
+        text-align: center;
+    }
+
     .btn-abrir-menu {
         display: block;
     }
 }
 
+/* Ajustando o tamanho da logo */
+.logo img {
+    max-width: 190px;
+    height: auto;
+}
+
 .logo {
-    display: flex;
-    align-items: center;
-    /* Mantém alinhado ao topo */
-    justify-content: flex-start;
-    height: 100px;
-    /* Ajuste conforme necessário */
+    position: relative; /* Adiciona posicionamento relativo ao container da logo */
+    width: 190px; /* Define a largura do container */
+    height: auto; /* Mantém a altura automática */
 }
 
 .logo img {
-    width: 270px;
-    /* Ajuste conforme necessário */
+    max-width: 100%; /* Garante que a imagem não ultrapasse a largura do container */
     height: auto;
+    position: absolute; /* Posiciona a imagem dentro do container */
+    top: 0;     /* Distância do topo do container (ajuste conforme necessário) */
+    left: 0;    /* Distância da esquerda do container (ajuste conforme necessário) */
+    transform: translate(0, ); /* Ajusta o posicionamento com base nos eixos X e Y */
+}
+
+.logo {
+    position: relative;
+    width: 200px;
+    height: 100px;
+    overflow: hidden;
+}
+
+.logo img {
     max-width: 100%;
-    transition: width 0.3s ease-in-out,
-    transform 0.3s ease-in-out;
-}
-
-.logo img:hover {
-    transform: scale(1.1);
-}
-
-/* Estilo para o rodapé e logo */
-.logo-footer {
-    display: flex;
-    flex-direction: row;
-    /* Alinha a logo e os ícones na mesma linha */
-    align-items: center;
-    /* Centraliza verticalmente logo e ícones */
-    justify-content: center;
-    /* Centraliza os elementos horizontalmente */
-    gap: 20px;
-    /* Ajuste o espaçamento entre a logo e os ícones */
-    margin-top: 20px;
-    /* Adicione margem para separar do conteúdo superior */
-    flex-wrap: wrap;
-    /*Permitir quebrar para a próxima linha se não houver espaço*/
-}
-
-.logo-footer img {
-    width: 250px;
-    /* Tamanho fixo da logo */
     height: auto;
-    /* Mantém a proporção da logo */
-    display: block;
-    transition: transform 0.3s ease-in-out;
-    /* Adicionado */
-}
+    position: absolute;
+    top: 50%;
+    /*Uma das opções e centralização horizontal: */
+    /*left: 0;      Alinha à esquerda */
+    right:25px; /*Alinha a direita*/
+    transform: translateY(-50%);
 
-.logo-footer img:hover {
-    transform: scale(1.1);
-    /* Efeito ao passar o mouse */
+   /*Ajuste com o transform se desejar*/
+    /*transform: translate(10px, -50%); move 10 px a direita e centraliza na vertical*/
+    /*transform: translate(-10px, -50%); move 10 px a esquerda e centraliza na vertical*/
 }
-
-.logo-footer .icons {
-    display: flex;
-    align-items: center;
-    /* Alinha verticalmente os ícones */
-    gap: 10px;
-    /* Espaçamento entre os ícones */
-}
-
-.logo-footer .icons img {
-    width: 24px;
-    /* Tamanho fixo dos ícones */
-    height: auto;
-    transition: transform 0.3s ease-in-out;
-    /* Adicionado */
-}
-
-.icons img:hover {
-    transform: scale(1.2);
-    /* Efeito ao passar o mouse */
-}
-
-/*Media Query para telas menores de 768px */
-@media screen and (max-width: 768px) {
-    /*Dentro do Media Query, para telas menores, centralize o conteúdo */
-    .logo-footer {
-        flex-direction: column;
-        /*Empilha a logo e os icones*/
-        align-items: center;
-        /* Centraliza horizontalmente logo e ícones */
-        justify-content: center;
-        gap: 10px;
-        /*Ajuste o espaçamento entre a logo e os icones*/
-        margin-top: 20px;
-        /* Adicionei margem para dar um respiro entre o conteúdo superior e o rodapé */
-    }
-}
-
 /* Estilo da seção de currículo */
 .cv {
     padding: 60px 0;
@@ -577,7 +555,6 @@ footer .line-footer p a {
 
 .cv .titulo span {
     color: #007bff;
-    /* Cor do destaque */
 }
 
 .cv p {
@@ -600,7 +577,6 @@ footer .line-footer p a {
 
 .cv a button:hover {
     background-color: #0056b3;
-    /* Cor ao passar o mouse */
 }
 
 @media (max-width: 768px) {
@@ -618,168 +594,25 @@ footer .line-footer p a {
     }
 }
 
-/* REMOVER o menu mobile do rodape */
-footer .btn-abrir-menu {
-    display: none;
-}
-
-/* Estilo geral para telas maiores */
-.interface {
-    max-width: 1280px;
-    margin: 0 auto;
-    padding: 20px;
-}
-
-.logo img {
-    max-width: 270px;
-    /* Ajuste o tamanho da logo conforme necessário */
+/* Ajuste para a logo no rodapé */
+footer .logo-footer img {
+    max-width: 250px;
     height: auto;
 }
 
-/* Estilos específicos para o cabeçalho em telas menores */
-@media (max-width: 1020px) {
-    header .interface {
-        display: flex;
-        align-items: center;
-        justify-content: space-between; /* Garante espaço entre os elementos */
-        flex-wrap: nowrap;
-        /* Impede que os itens quebrem para a próxima linha */
-        padding: 10px 20px;
-    }
-
-    header .logo {
-        order: 1;
-        /* Mantém a logo no início */
-    }
-
-    header .logo img {
-        max-width: 260px;
-        /* Aumenta um pouco o tamanho máximo da logo */
-        height: auto;
-    }
-
-    header .btn-contato-fora-menu {
-        display: block;
-        order: 2;
-        padding: 6px 16px;
-        /* Mantém o tamanho original */
-        background-color: #007FFF;
-        color: white;
-        font-size: 14px;
-        /* Mantém o tamanho original */
-        font-weight: 600;
-        border-radius: 16px;
-        text-align: center;
-        text-transform: uppercase;
-        border: 2px solid #007FFF;
-        cursor: pointer;
-        transition: all 0.3s ease;
-        width: fit-content;
-        white-space: nowrap;
-        /* Evita que o texto do botão quebre a linha */
-        margin-right: 10px;
-        /* Espaço entre o botão e o ícone do menu */
-    }
-
-    header .btn-contato-fora-menu:hover {
-        background-color: #005bb5;
-        border-color: #005bb5;
-        transform: scale(1.05);
-        box-shadow: 0px 0px 15px rgba(0, 127, 255, 0.7);
-    }
-
-    header .btn-abrir-menu {
-        order: 3;
-        margin-left: auto;
-        /* Garante que o ícone do menu esteja à direita */
-    }
-
-    header .btn-abrir-menu i {
-        font-size: 32px;
-        /* Aumenta um pouco o tamanho do ícone do menu */
-    }
+/* Estilizando o botão de contato no header (modo mobile) */
+header .btn-contato-fora-menu {
+    border: 2px solid #007FFF; /* Aumentei a espessura da borda para melhor visualização */
+    color: #007FFF; /* Cor do texto para combinar com a borda */
+    background-color: transparent; /* Fundo transparente */
+    padding: 8px 16px; /* Ajustei o padding para um visual equilibrado */
+    border-radius: 20px; /* Arredondei as bordas */
+    font-weight: bold; /* Texto em negrito para destacar */
+    transition: all 0.3s ease;
 }
 
-
-/* Estilo geral para telas maiores */
-.interface {
-    max-width: 1280px;
-    margin: 0 auto;
-    padding: 20px;
+header .btn-contato-fora-menu:hover {
+    background-color: #007FFF; /* Cor de fundo ao passar o mouse */
+    color: #fff; /* Cor do texto ao passar o mouse */
 }
 
-.logo img {
-    max-width: 270px;
-    /* Ajuste o tamanho da logo conforme necessário */
-    height: auto;
-}
-
-/* Estilos específicos para o cabeçalho em telas menores */
-@media (max-width: 1020px) {
-    header .interface {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        /* Garante espaço entre os elementos */
-        flex-wrap: nowrap;
-        /* Impede que os itens quebrem para a próxima linha */
-        padding: 10px 20px;
-    }
-
-    header .logo {
-        order: 1;
-        /* Mantém a logo no início */
-    }
-
-    header .logo img {
-        max-width: 260px;
-        /* Aumenta um pouco o tamanho máximo da logo */
-        height: auto;
-    }
-
-    header .btn-contato-fora-menu {
-        display: block;
-        order: 2;
-        padding: 6px 16px;
-        /* Mantém o tamanho original */
-        background-color: #007FFF;
-        color: white;
-        font-size: 14px;
-        /* Mantém o tamanho original */
-        font-weight: 600;
-        border-radius: 16px;
-        text-align: center;
-        text-transform: uppercase;
-        border: 2px solid #007FFF;
-        cursor: pointer;
-        transition: all 0.3s ease;
-        width: fit-content;
-        white-space: nowrap;
-        /* Evita que o texto do botão quebre a linha */
-        margin-right: 10px;
-        /* Espaço entre o botão e o ícone do menu */
-    }
-
-    header .btn-contato-fora-menu:hover {
-        background-color: #005bb5;
-        border-color: #005bb5;
-        transform: scale(1.05);
-        box-shadow: 0px 0px 15px rgba(0, 127, 255, 0.7);
-    }
-
-    header .btn-abrir-menu {
-        order: 3;
-        margin-left: auto;
-        /* Garante que o ícone do menu esteja à direita */
-    }
-
-    header .btn-abrir-menu i {
-        font-size: 32px;
-        /* Aumenta um pouco o tamanho do ícone do menu */
-    }
-}
-
-/* Esconde o botão em telas maiores que 1020px */
-.btn-contato-fora-menu {
-    display: none;
-}

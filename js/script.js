@@ -38,3 +38,5 @@ document.getElementById('overlay-menu').addEventListener('click', function() {
     document.getElementById('menu-mobile').classList.remove('abrir-menu');
     this.style.display = 'none'; // Oculta o overlay quando clicar no fundo
 });
+
+
