@@ -96,10 +96,11 @@ header nav.menu-desktop ul li {
     height: 100vh;
     position: fixed;
     top: 0;
-    right: -20%; /* Ajustado para mais à direita */
+    right: -100%; /* Ajustado para fora da tela inicialmente */
     z-index: 99999;
     width: 70%;
-    overflow: hidden;
+    max-width: 400px; /* Limita a largura máxima do menu */
+    overflow-y: auto; /* Adiciona barra de rolagem se necessário */
     transition: right 0.5s ease;
     display: flex;
     flex-direction: column;
@@ -147,6 +148,80 @@ header nav.menu-desktop ul li {
 .menu-mobile nav ul li a:hover {
     background-color: #007FFF;
     color: #000;
+}
+
+/* ESTILO DO MENU MOBILE (Modificado) */
+.menu-mobile {
+    background-color: #000;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    right: -100%; /* Ajustado para fora da tela inicialmente */
+    z-index: 99999;
+    width: 70%;
+    max-width: 400px; /* Limita a largura máxima do menu */
+    overflow-y: auto; /* Adiciona barra de rolagem se necessário */
+    transition: right 0.5s ease;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch; /* Estende os itens para preencher a largura */
+    padding: 20px; /* Adiciona um preenchimento geral */
+}
+
+.menu-mobile .btn-fechar {
+    padding: 10px 0; /* Reduz o preenchimento vertical */
+    text-align: right;
+}
+
+.menu-mobile .btn-fechar i {
+    color: #007FFF;
+    font-size: 30px;
+}
+
+.menu-mobile nav {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start; /* Alinha os itens ao topo */
+    padding-top: 20px; /* Espaço extra acima dos links */
+}
+
+.menu-mobile nav ul {
+    list-style-type: none;
+    padding: 0; /* Remove o preenchimento padrão */
+    margin: 0; /* Remove a margem padrão */
+}
+
+.menu-mobile nav ul li {
+    border-bottom: 1px solid #222; /* Adiciona uma linha divisória */
+}
+
+.menu-mobile nav ul li:last-child {
+    border-bottom: none; /* Remove a linha da última borda */
+}
+
+.menu-mobile nav ul li a {
+    color: #fff;
+    font-size: 18px; /* Reduz um pouco o tamanho da fonte */
+    font-weight: 300;
+    padding: 15px 5%; /* Ajusta o preenchimento */
+    display: block;
+    text-decoration: none; /* Remove o sublinhado */
+    transition: background-color 0.3s ease; /* Transição suave */
+}
+
+.menu-mobile nav ul li a:hover {
+    background-color: #007FFF;
+    color: #000;
+}
+
+/* Esconde o botão de contato DENTRO do menu mobile */
+.menu-mobile .btn-contato-fora-menu {
+    display: none;
+}
+/* Esconde o botão de contato DENTRO do menu mobile */
+.menu-mobile .btn-contato-fora-menu {
+    display: none;
 }
 
 .overlay-menu {
@@ -397,9 +472,100 @@ footer .line-footer p a {
     color: #fff;
 }
 
+/* Ajustando o tamanho da logo */
+.logo img {
+    max-width: 190px;
+    height: auto;
+}
+
+.logo {
+    position: relative;
+    width: 200px;
+    height: 100px;
+    overflow: hidden;
+}
+
+.logo img {
+    max-width: 100%;
+    height: auto;
+    position: absolute;
+    top: 50%;
+    right: 25px;
+    transform: translateY(-50%);
+}
+
+/* Estilo da seção de currículo */
+.cv {
+    padding: 60px 0;
+    background-color: #000000;
+    text-align: center;
+}
+
+.cv .interface {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.cv .titulo {
+    font-size: 36px;
+    font-weight: bold;
+    color: #ffffff;
+    margin-bottom: 20px;
+}
+
+.cv .titulo span {
+    color: #007bff;
+}
+
+.cv p {
+    font-size: 18px;
+    color: #c5c5c5;
+    margin-bottom: 40px;
+}
+
+.cv a button {
+    background-color: #007bff;
+    color: white;
+    font-size: 18px;
+    padding: 15px 30px;
+    border: none;
+    border-radius: 5px;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.cv a button:hover {
+    background-color: #0056b3;
+}
+
+/* Ajuste para a logo no rodapé */
+footer .logo-footer img {
+    max-width: 250px;
+    height: auto;
+}
+
+/* Estilizando o botão de contato no header (modo mobile) */
+header .btn-contato-fora-menu {
+    display: none; /* Inicialmente escondido */
+    border: 2px solid #007FFF;
+    color: #007FFF;
+    background-color: transparent;
+    padding: 8px 16px;
+    border-radius: 20px;
+    font-weight: bold;
+    transition: all 0.3s ease;
+}
+
+header .btn-contato-fora-menu:hover {
+    background-color: #007FFF;
+    color: #fff;
+}
+
+/* MEDIA QUERIES (Responsividade) */
 @media screen and (max-width: 1020px) {
 
-    /* CLASSES GERAIS */
     .flex {
         flex-direction: column;
     }
@@ -416,11 +582,15 @@ footer .line-footer p a {
     /* CABEÇALHO */
     .menu-desktop,
     .btn-contato {
-        display: none;
+        display: none; /* Esconde o menu desktop e o botão de contato original */
+    }
+
+    /* Mostra o botão de contato FORA do menu */
+    header .btn-contato-fora-menu {
+        display: block;
     }
 
     /* TOPO DO SITE */
-
     section.topo-do-site .flex {
         gap: 40px;
     }
@@ -489,97 +659,7 @@ footer .line-footer p a {
     .btn-abrir-menu {
         display: block;
     }
-}
 
-/* Ajustando o tamanho da logo */
-.logo img {
-    max-width: 190px;
-    height: auto;
-}
-
-.logo {
-    position: relative; /* Adiciona posicionamento relativo ao container da logo */
-    width: 190px; /* Define a largura do container */
-    height: auto; /* Mantém a altura automática */
-}
-
-.logo img {
-    max-width: 100%; /* Garante que a imagem não ultrapasse a largura do container */
-    height: auto;
-    position: absolute; /* Posiciona a imagem dentro do container */
-    top: 0;     /* Distância do topo do container (ajuste conforme necessário) */
-    left: 0;    /* Distância da esquerda do container (ajuste conforme necessário) */
-    transform: translate(0, ); /* Ajusta o posicionamento com base nos eixos X e Y */
-}
-
-.logo {
-    position: relative;
-    width: 200px;
-    height: 100px;
-    overflow: hidden;
-}
-
-.logo img {
-    max-width: 100%;
-    height: auto;
-    position: absolute;
-    top: 50%;
-    /*Uma das opções e centralização horizontal: */
-    /*left: 0;      Alinha à esquerda */
-    right:25px; /*Alinha a direita*/
-    transform: translateY(-50%);
-
-   /*Ajuste com o transform se desejar*/
-    /*transform: translate(10px, -50%); move 10 px a direita e centraliza na vertical*/
-    /*transform: translate(-10px, -50%); move 10 px a esquerda e centraliza na vertical*/
-}
-/* Estilo da seção de currículo */
-.cv {
-    padding: 60px 0;
-    background-color: #000000;
-    text-align: center;
-}
-
-.cv .interface {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 20px;
-}
-
-.cv .titulo {
-    font-size: 36px;
-    font-weight: bold;
-    color: #ffffff;
-    margin-bottom: 20px;
-}
-
-.cv .titulo span {
-    color: #007bff;
-}
-
-.cv p {
-    font-size: 18px;
-    color: #c5c5c5;
-    margin-bottom: 40px;
-}
-
-.cv a button {
-    background-color: #007bff;
-    color: white;
-    font-size: 18px;
-    padding: 15px 30px;
-    border: none;
-    border-radius: 5px;
-    text-transform: uppercase;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-}
-
-.cv a button:hover {
-    background-color: #0056b3;
-}
-
-@media (max-width: 768px) {
     .cv .titulo {
         font-size: 28px;
     }
@@ -593,26 +673,3 @@ footer .line-footer p a {
         padding: 12px 25px;
     }
 }
-
-/* Ajuste para a logo no rodapé */
-footer .logo-footer img {
-    max-width: 250px;
-    height: auto;
-}
-
-/* Estilizando o botão de contato no header (modo mobile) */
-header .btn-contato-fora-menu {
-    border: 2px solid #007FFF; /* Aumentei a espessura da borda para melhor visualização */
-    color: #007FFF; /* Cor do texto para combinar com a borda */
-    background-color: transparent; /* Fundo transparente */
-    padding: 8px 16px; /* Ajustei o padding para um visual equilibrado */
-    border-radius: 20px; /* Arredondei as bordas */
-    font-weight: bold; /* Texto em negrito para destacar */
-    transition: all 0.3s ease;
-}
-
-header .btn-contato-fora-menu:hover {
-    background-color: #007FFF; /* Cor de fundo ao passar o mouse */
-    color: #fff; /* Cor do texto ao passar o mouse */
-}
-
