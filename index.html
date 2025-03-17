@@ -1,372 +1,457 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- GOOGLE FONTS -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
-        rel="stylesheet">
-    <!-- FIM GOOGLE FONTES -->
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Agência BRN - Design e Estratégia para Resultados Reais.">
+  <!-- Favicon -->
+  <link rel="icon" href="images/favicon.ico">
 
-       <!-- Favicon -->
-       <link rel="icon" type="image/x-icon" href="logo/pixelcut-export (32).png">
-       
-    <!-- BOOTSTRAP ICONS -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
-    <!-- FIM BOOTSTRAP ICONS -->
-    <!-- FONT AWESOME -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
-        integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg=="
-        crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <!-- FIM FONT AWESOME -->
-    <link rel="stylesheet" href="css/style.css">
+  <!-- Arquivo CSS do Bootstrap -->
+  <link rel="stylesheet" href="css/bootstrap.min.css">
 
-    <title>Daniel Brito</title>
-    <style>
-        /* Estilos para o menu mobile */
-        .menu-mobile {
-            position: fixed;
-            top: 0;
-            left: -300px;
-            /* Escondido fora da tela */
-            width: 300px;
-            /* Largura do menu */
-            height: 100%;
-            background-color: #333;
-            /* Cor de fundo */
-            color: #fff;
-            /* Cor do texto */
-            z-index: 1000;
-            /* Garante que esteja acima de outros elementos */
-            transition: left 0.3s ease;
-            /* Animação para abrir/fechar */
-            overflow-y: auto;
-            /* Adiciona barra de rolagem se necessário */
-        }
+  <!-- Arquivo CSS do aos.css -->
+  <link rel="stylesheet" href="css/aos.css">
 
-        .menu-mobile.abrir-menu {
-            left: 0;
-            /* Mostra o menu */
-        }
+  <!-- Arquivo CSS do fancybox -->
+  <link rel="stylesheet" href="css/jquery.fancybox.min.css">
 
-        .menu-mobile .btn-fechar {
-            text-align: right;
-            padding: 10px;
-        }
+  <!-- Arquivo CSS do owl carousel -->
+  <link rel="stylesheet" href="css/owl.carousel.min.css">
+  <link rel="stylesheet" href="css/owl.theme.default.min.css">
 
-        .menu-mobile .btn-fechar i {
-            font-size: 24px;
-            cursor: pointer;
-        }
+  <!-- Arquivo toasts -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.min.css">
 
-        .menu-mobile nav ul {
-            list-style: none;
-            padding: 0;
-            margin: 0;
-        }
+  <!-- Ícones do Bootstrap -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
 
-        .menu-mobile nav ul li {
-            padding: 15px;
-            text-align: center;
-            border-bottom: 1px solid #555;
-        }
+  <!-- Fontes do Google -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@100;200;300;400;500;600;700;800&display=swap"
+    rel="stylesheet">
 
-        .menu-mobile nav ul li a {
-            color: #fff;
-            text-decoration: none;
-            font-size: 18px;
-            display: block;
-            /* Garante que o link preencha todo o espaço */
-        }
-
-        /* Estilos para o overlay */
-        .overlay-menu {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-color: rgba(0, 0, 0, 0.5);
-            /* Fundo preto semi-transparente */
-            z-index: 999;
-            /* Abaixo do menu mobile */
-            display: none;
-            /* Inicialmente escondido */
-        }
-
-        /* Esconde o botão de contato no menu desktop em telas menores */
-        @media (max-width: 768px) {
-          .menu-desktop {
-            display: none;
-          }
-        }
-    </style>
+  <!-- Arquivo CSS principal -->
+  <link rel="stylesheet" href="css/style.css">
+  <title>Daniel Brito</title>
 </head>
 
-<body>
+<body class="home-1">
 
-    <header>
-        <div class="interface">
-            <div class="logo">
-                <a href="#Início">
-                    <img src="logo/Captura_de_tela_2025-03-12_184622-removebg-preview.png" alt="Logo da Agência BRN">
-                </a>
-            </div>
-            <!--logo-->
+  <!-- Início do PreLoader -->
+  <div id="preloader">
+    <svg id="mainSVG" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600">
+      <defs>
+        <radialGradient id="mainGrad" cx="400" cy="300" fx="400" fy="300" r="100" gradientUnits="userSpaceOnUse">
+          <stop offset=".68" stop-color="#21df51" />
+          <stop offset=".72" stop-color="#3add63" />
+          <stop offset=".77" stop-color="#4fdd73" />
+          <stop offset=".82" stop-color="#66db83" />
+          <stop offset=".88" stop-color="#7cd893" />
+          <stop offset=".93" stop-color="#95d8a6" />
+          <stop offset=".99" stop-color="#bde6c7" />
+          <stop offset="1" stop-color="#e3f1e7" />
+        </radialGradient>
+      </defs>
+      <circle id="fillDot" cx="400" cy="300" fill="#21df51" r="100" />
+      <circle id="gradDot" cx="400" cy="300" fill="url(#mainGrad)" r="100" />
+    </svg>
+  </div>
+  <!-- Fim do PreLoader -->
 
-            <nav class="menu-desktop">
-                <ul>
-                    <li><a href="#Início">Início</a></li>
-                    <li><a href="#Especialidades">Especialidades</a></li>
-                    <li><a href="#Sobre">Sobre</a></li>
-                    <li><a href="#Projetos">Projetos</a></li>
-                </ul>
-            </nav>
+  <!-- Início do botão de scroll para o topo -->
+  <div id="progress">
+    <span id="progress-value"><i class="bi bi-arrow-up-short"></i></span>
+  </div>
+  <!-- Fim do botão de scroll para o topo -->
 
-            <div class="btn-contato">
-                <a href="https://wa.me/5511982573707">
-                    <button>Contato</button>
-                </a>
-            </div>
-            <!--btn-contato-->
 
-            <!-- Botão de contato fora do menu (antes do menu mobile) -->
-            <a href="https://wa.me/5511982573707" class="btn-contato-fora-menu">Contato</a>
-
-            <div class="btn-abrir-menu" id="btn-menu">
-                <i class="bi bi-list"></i>
-            </div>
-
-            <div class="menu-mobile" id="menu-mobile">
-                <div class="btn-fechar">
-                    <i class="bi bi-x-lg"></i>
-                </div>
-
-                <nav>
-                    <ul>
-                        <li><a href="#Início">Início</a></li>
-                        <li><a href="#Especialidades">Especialidades</a></li>
-                        <li><a href="#Sobre">Sobre</a></li>
-                        <li><a href="#Projetos">Projetos</a></li>
-                        <li><a href="#Contato">Contato</a></li> <!-- Adicionado o link de contato aqui -->
-                    </ul>
-                </nav>
-
-            </div>
-            <!--menu-mobile-->
-            <div class="overlay-menu" id="overlay-menu"></div>
+  <!-- ======= Início do Header ======= -->
+  <header class="header">
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top">
+      <div class="container">
+        <a class="navbar-brand " href="index.html"><img src="img/pixelcut-export (32).png" class="logo" alt="Agência BRN"></a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+          aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <i class="bi bi-list" id="menu"></i>
+        </button>
+        <div class="collapse navbar-collapse justify-content-between" id="navbarNav">
+          <ul class="navbar-nav ms-auto" id="navbar">
+            <li class="nav-item">
+              <a class="nav-link" href="#especialidades">Especialidades</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#sobre">Sobre</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#projetos">Projetos</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#contato">Contato</a>
+            </li>
+          </ul>
+          <div class="d-flex ms-auto">
+             <button id="mode-toggle" class="btn-light-mode switch-button"><i id="mode-icon"
+                class="bi bi-moon-fill"></i></button>
+          </div>
         </div>
-        <!--interface-->
-    </header>
+      </div>
+    </nav>
+  </header>
+  <!-- ======= Fim do Header ======= -->
 
-    <main>
-        <section class="topo-do-site" id="Início">
-            <div class="interface">
-                <div class="flex">
-                    <div class="txt-topo-site">
-                        <h1>Design e Estratégia para Resultados Reais<span>.</span></h1>
-                        <p>Com visão estratégica e expertise em gestão de projetos, ajuda empresas a crescer de forma sustentável. Desenvolvo soluções digitais impactantes, otimizo processos e potencializo vendas para fortalecer</p>
-
-                    </div>
-                    <!--txt-topo-site-->
-
-                    <div class="img-topo-site">
-                        <img src="sobre mim/pessoa.png" alt="">
-                    </div>
-                    <!--img-topo-site-->
-                </div>
-                <!--flex-->
+  <!-- ============== Início da seção Hero ========== -->
+  <section class="hero d-flex flex-column justify-content-center align-items-center" id="hero">
+    <div id="particles-js"></div>
+    <div class="container">
+      <div class="row justify-content-center align-items-center">
+        <div class="hero-text col-12 col-lg-5">
+          <div class="row">
+            <div class="hero-icons d-flex gap-lg-3 gap-2 my-lg-3 my-2" data-aos="fade-up" data-aos-delay="100">
+              <a href="https://www.instagram.com/danielbrito.emp/"><i class="bi bi-instagram"></i></a>
+              <a href="https://www.tiktok.com/@danielbrito.mkt"><i class="bi bi-tiktok"></i></a>
+              <a href="https://www.youtube.com/@danielbrito-emp"><i class="bi bi-youtube"></i></a>
+              <a href="www.linkedin.com/in/daniel-cavalcante-brit"><i class="bi bi-linkedin"></i></a>
             </div>
-            <!--interface-->
-        </section>
-        <!--topo-do-site-->
-
-        <section class="especiliadades" id="Especialidades">
-            <div class="interface">
-                <h2 class="titulo">MINHAS <span>ESPECIALIDADES.</span></h2>
-                <div class="flex">
-                    <div class="especialidades-box">
-                        <i class="bi bi-code-square"></i>
-                        <h3>Desenvolvimento Web e Design</h3>
-                        <p> Criação de sites modernos e responsivos, alinhados à identidade de sua empresa, com foco
-                            na experiência do usuário e otimização para opções específicas.</p>
-                    </div>
-                    <!--especialidades-box-->
-
-                    <div class="especialidades-box">
-                        <i class="bi bi-currency-dollar"></i>
-                        <h3>Estratégia de Vendas e Negociação</h3>
-                        <p>Desenvolvimento de estratégias para aumentar vendas e posicionamento, com gestão eficiente
-                            de negociações e projetos.</p>
-                    </div>
-                    <!--especialidades-box-->
-
-                    <div class="especialidades-box">
-                        <i class="bi bi-binoculars"></i>
-                        <h3>Gestão de Projetos e Resultados</h3>
-                        <p>Acompanhamento de projetos, implementação de sistemas de CRM e análise de desempenho para
-                            resultados mensuráveis ​​e sustentáveis.</p>
-                    </div>
-                    <!--especialidades-box-->
-                </div>
-                <!--flex-->
+            <div class="col-12 ">
+              <h2 class="title col-12" data-aos="fade-up" data-aos-delay="150">Design e Estratégia para <span
+                  class="unique-text">Resultados Reais</span>. </h2>
             </div>
-            <!--interface-->
-        </section>
-        <!--especiliadades-->
-
-        <section class="sobre" id="Sobre">
-            <div class="interface">
-                <div class="flex">
-                    <div class="img-sobre">
-                        <img src="images/foto.png" alt="">
-                    </div>
-                    <!--img-sobre-->
-
-                    <div class="txt-sobre">
-                        <h2>MUITO PRAZER, <span>SOU DANIEL BRITO.</span></h2>
-                        <p>
-                            Sou empresário, web designer e influenciador em aprendizado constante. Estou adquirindo
-                            conhecimentos em desenvolvimento web , gestão de projetos e estratégias de crescimento para
-                            ajudar empresas a crescer com soluções digitais criativas e eficazes. Combinando
-                            negociação , design impactante e inovação , busco alavancar negócios e proporcionar sucesso
-                            sustentável aos meus clientes.</p>
-                        <p>Estou sempre em evolução, buscando novos conhecimentos em desenvolvimento web e estratégias
-                            de crescimento para oferecer soluções inovadoras. Meu objetivo é ajudar empresas a alcançar
-                            seu potencial, combinando criatividade e prática .</p>
-                        <div class="btn-social">
-                            <a href="https://www.instagram.com/danielbrito.emp/"><button><i
-                                        class="bi bi-instagram"></i></button></a>
-                            <a href="https://www.youtube.com/@danielbrito-emp"><button><i
-                                        class="bi bi-youtube"></i></button></a>
-                            <a href="https://www.tiktok.com/@danielbrito.mkt"><button><i
-                                        class="bi bi-tiktok"></i></button></a>
-                            <a href="www.linkedin.com/in/daniel-cavalcante-brito-b59a48294"><button><i
-                                        class="bi bi-linkedin"></i></button></a>
-                        </div>
-                        <!--btn-social-->
-                    </div>
-                    <!--txt-sobre-->
-                </div>
-                <!--flex-->
+            <div class="col-lg-10 col-12" data-aos="fade-up" data-aos-delay="200">
+              <p>
+                Com visão estratégica e expertise em gestão de projetos, ajudo empresas a crescer de forma sustentável. Desenvolvo soluções digitais impactantes, otimizo processos e potencializo vendas para fortalecer
+              </p>
             </div>
-            <!--interface-->
-        </section>
-        <!--sobre-->
 
-        <section class="cv">
-            <div class="interface">
-                <h2 class="titulo">MEU <span>CURRÍCULO.</span></h2>
-                <p>Confira meu currículo para saber mais sobre minha experiência e habilidades profissionais.</p>
-                <a href="curiculo/currículo.pdf" download>
-                    <button>Baixar Currículo</button>
-                </a>
-            </div>
-            <!--interface-->
-        </section>
-        <!--cv-->
+            <div class="btn-container" data-aos="fade-up" data-aos-delay="350">
+              <a href="https://wa.me/5511982573707" class="btn">Entrar em Contato</a>
+          </div>
 
-
-        <section class="portfolio" id="Projetos">
-            <div class="interface">
-                <h2 class="titulo">MEU <span>PORTFÓLIO.</span></h2>
-                <div class="flex">
-                    <div class="img-port" style="background-image: url(projetos/imagem.jpg);">
-                        <div class="overlay">Projeto 1</div>
-                    </div>
-                    <div class="img-port"
-                        style="background-image: url(projetos/Azul-e-Verde-Negrito-e-Brilhante-Projeto-Progresso-Linha-do-tempo-Infografico.jpg);">
-                        <div class="overlay">Projeto 2</div>
-                    </div>
-                    <div class="img-port" style="background-image: url(projetos/modelo-html-3846478.jpg);">
-                        <div class="overlay">Projeto 3</div>
-                    </div>
-                </div>
-                <!--flex-->
-            </div>
-            <!--interface-->
-        </section>
-        <!--portfolio-->
-
-        <section class="formulario" id="Contato">
-            <div class="interface">
-                <h2 class="titulo">FALA <span>COMIGO.</span></h2>
-
-                <form action="https://formspree.io/f/xqapznpd" method="POST">
-                    <div class="hs-form-frame" data-region="na1"
-                        data-form-id="8de68d62-dd33-4336-a38d-997971eae830" data-portal-id="49542836"></div>
-                    ">
-                    <input type="text" name="nome" placeholder="Seu nome completo:" required>
-                    <input type="email" name="email" placeholder="Seu e-mail:" required>
-                    <input type="tel" name="telefone" placeholder="Seu celular:">
-                    <textarea name="mensagem" placeholder="Sua mensagem" required></textarea>
-                    <div class="btn-enviar"><input type="submit" value="ENVIAR"></div>
-                </form>
-            </div>
-            <!--interface-->
-        </section>
-        <!--formulario-->
-
-    </main>
-
-    <footer>
-        <div class="interface">
-            <div class="line-footer">
-                <div class="flex">
-                    <div class="logo-footer">
-                        <img src="logo/Captura_de_tela_2025-03-12_184622-removebg-preview.png"
-                            alt="Logotipo Agência BRN">
-                    </div>
-                    <!--logo-footer-->
-                    <div class="btn-social">
-                        <a href="https://www.instagram.com/danielbrito.emp/"><button><i
-                                        class="bi bi-instagram"></i></button></a>
-                        <a href="https://www.youtube.com/@danielbrito-emp"><button><i
-                                        class="bi bi-youtube"></i></button></a>
-                        <a href="https://www.tiktok.com/@danielbrito.mkt"><button><i
-                                        class="bi bi-tiktok"></i></button></a>
-                        <a href="www.linkedin.com/in/daniel-cavalcante-brito-b59a48294"><button><i
-                                        class="bi bi-linkedin"></i></button></a>
-                    </div>
-                    <!--btn-social-->
-                </div>
-            </div>
-            <!--line-footer-->
-
-            <div class="line-footer borda">
-                <p><i class="bi bi-envelope-fill"></i> <a
-                        href="mailto:contato@bruno.com.br">danielcbrito72@gmail.com</a></p>
-            </div>
-            <!--line-footer-->
+          </div>
         </div>
-        <!--interface-->
-    </footer>
+        <div class="col-12 col-lg-7 mx-md-auto text-center" data-aos="fade-left" data-aos-delay="100">
+          <div class="hero-image">
+            
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- ============== Fim da seção Hero ========== -->
+
+  <!-- ============== Início da seção de especialidades ========== -->
+  <section class="container services py-5" id="especialidades">
+    <div class="heading">
+      <span class="pretitle" data-aos="fade-up">
+        Minhas Especialidades
+      </span>
+      <h2 class="title col-lg-10 col-12" data-aos="fade-up" data-aos-delay="100">
+        O que eu ofereço?
+      </h2>
+    </div>
+    <div class="row gy-4 gx-4 ">
+      <!-- especialidade número 1 -->
+      <div class="col-md-6 col-12 col-lg-4 mx-auto ">
+        <div class="box box-service box-hover" data-aos="fade-right" data-aos-delay="250">
+          <div class="box-icon my-2">
+            <i class="bi bi-code-slash"></i>
+          </div>
+          <h2 class="title-2 my-2 ">Desenvolvimento Web e Design</h2>
+          <p>Criação de sites modernos e responsivos, alinhados à identidade de sua empresa, com foco na experiência do usuário e otimização para opções específicas.</p>
+        </div>
+      </div>
+      <div class=" col-md-6 col-lg-4 mx-auto" data-aos="fade-down" data-aos-delay="200">
+        <!-- especialidade número 2 -->
+        <div class="box box-service box-hover">
+          <div class="box-icon my-2">
+            <i class="bi bi-megaphone-fill"></i>
+          </div>
+          <h2 class="title-2 my-2 ">Estratégia de Vendas e Negociação</h2>
+          <p>Desenvolvimento de estratégias para aumentar vendas e posicionamento, com gestão eficiente de negociações e projetos.</p>
+        </div>
+      </div>
+      <div class="col-md-6 col-lg-4 mx-auto" data-aos="fade-left" data-aos-delay="250">
+        <!-- especialidade número 3 -->
+        <div class="box box-service box-hover">
+          <div class="box-icon my-2">
+            <i class="bi bi-search"></i>
+          </div>
+          <h2 class="title-2 my-2 ">Gestão de Projetos e Resultados</h2>
+          <p>Acompanhamento de projetos, implementação de sistemas de CRM e análise de desempenho para resultados mensuráveis ​​e sustentáveis.</p>
+        </div>
+      </div>
+
+    </div>
+  </section>
+  <!-- ============== Fim da seção de especialidades ========== -->
+
+  <!-- ============== Início da seção Sobre ========== -->
+   <!-- ============== Início da seção Sobre ========== -->
+   <section class="about py-5 mt-5 sobre" id="sobre">
+    <div class="container">
+      <div class="row mt-5 justify-content-center align-items-center">
+        <div class="col-12 col-lg-6">
+          <span class="pretitle" data-aos="fade-up" data-aos-delay="200">
+            Sobre Mim
+          </span>
+          <h2 class="title col-12" data-aos="fade-up" data-aos-delay="250">
+            Muito prazer, sou <span class="unique-text">Daniel Brito</span>
+          </h2>
+          <p class="col-lg-10 col-12" data-aos="fade-up" data-aos-delay="300">
+            Sou empresário, web designer e influenciador em aprendizado constante. Estou adquirindo conhecimentos em desenvolvimento web , gestão de projetos e estratégias de crescimento para ajudar empresas a crescer com soluções digitais criativas e eficazes. Combinando negociação , design impactante e inovação , busco alavancar negócios e proporcionar sucesso sustentável aos meus clientes.
+          </p>
+
+          <p class="col-lg-10 col-12" data-aos="fade-up" data-aos-delay="300">
+            Estou sempre em evolução, buscando novos conhecimentos em desenvolvimento web e estratégias de crescimento para oferecer soluções inovadoras. Meu objetivo é ajudar empresas a alcançar seu potencial, combinando criatividade e prática .
+          </p>
+  
+          <a href="curiculo/currículo.pdf" class="btn" data-aos="fade-up" data-aos-delay="350">Baixar Currículo</a>
+        </div>
+        <!-- imagem -->
+        
+      </div>
+    </div>
+  </section>
+        <!-- imagem -->
+    
+  <!-- ============== Fim da seção Sobre ========== -->
+  <!-- ============== Fim da seção Sobre ========== -->
+
+
+  <!-- ============== Início da seção de portfólio ========== -->
+
+  <section class="container portfolio py-5" id="projetos">
+    <div class="heading">
+      <span class="pretitle" data-aos="fade-up">
+        Projetos
+      </span>
+      <h2 class="title col-12" data-aos="fade-up" data-aos-delay="100">
+        Meu Portfólio
+      </h2>
+    </div>
+
+    <div class="row portfolio-row gy-4 gx-4" data-aos="fade-up" data-aos-delay="150">
+      <div class="col-md-6 col-lg-4 mx-auto ">
+        <div class="portfolio-item">
+          <img src="img/projets/Captura de tela 2025-03-17 151825.png" class="gallery-item" alt="portfolio-img">
+          <div class="img-overlay">
+            <div class="content">
+              <h3>Projeto 1</h3>
+              <h6>Descrição do projeto</h6>
+              <div class="link">
+                <a class="unique-text" href="https://danielcbrito.github.io/projeto-1/">Ver projeto</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class=" col-md-6  col-lg-4 mx-auto ">
+        <div class="portfolio-item">
+          <img src="img/projets/Captura de tela 2025-03-07 162005.png" class="gallery-item" alt="portfolio-img">
+          <div class="img-overlay">
+            <div class="content">
+              <h3>Projeto 2</h3>
+              <h6>Descrição do projeto</h6>
+              <div class="link">
+                <a class="unique-text" href="#">Ver projeto</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class=" col-md-6  col-lg-4 mx-auto ">
+        <div class="portfolio-item">
+          <img src="img/projets/Captura de tela 2025-03-07 165151.png" alt="portfolio-img">
+          <div class="img-overlay">
+            <div class="content">
+              <h3>Projeto 3</h3>
+              <h6>Descrição do projeto</h6>
+              <div class="link">
+                <a class="unique-text" href="#">Ver projeto</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- ============== Fim da seção de portfólio ========== -->
+
+
+  <!-- ============== Start contact section ========== -->
+  <section class="container contact py-5" id="contato">
+    <div class="heading ">
+      <span class="pretitle" data-aos="fade-up">
+        Contato
+      </span>
+      <h2 class="title col-12" data-aos="fade-up" data-aos-delay="100">
+        Fale comigo
+      </h2>
+    </div>
+    <div class="row  gx-4 ">
+      <div class="col-12 col-lg-6 gy-3">
+        <h2 class="title-2 " data-aos="fade-right" data-aos-delay="200">
+          Informações de contato:
+        </h2>
+        <div class="info d-flex my-4 " data-aos="fade-right" data-aos-delay="250">
+          <h5><i class="bi bi-envelope-fill mx-4"></i>danielcbrito72@gmail.com</h5>
+        </div>
+
+        <div class="info d-flex my-4 " data-aos="fade-right" data-aos-delay="250">
+          <h5><i class="bi bi-phone-fill mx-4"></i>+55 11 98257-3707</h5>
+        </div>
+      </div>
+      <div class="col-12 col-lg-6">
+        <!--Form To have user messages-->
+        <form class="main-form" id="contact-us-form" action="https://formspree.io/f/xqapznpd" method="post">
+          <div class="col-12">
+            <div class="row g-3 mb-1">
+              <div class="col-lg-6 col-12" data-aos="fade-right" data-aos-delay="200">
+                <input placeholder="Seu nome completo:" type="text" id="name" name="name" class="text-input">
+              </div>
+              <div class="col-lg-6 col-12" data-aos="fade-left" data-aos-delay="200">
+                <input placeholder="Seu e-mail:" type="email" id="email" name="email" class="text-input">
+              </div>
+            </div>
+          </div>
+          <div class="col-12" data-aos="fade-up" data-aos-delay="300">
+            <input placeholder="Seu celular:" type="tel" id="phone" name="phone" class="text-input my-2">
+          </div>
+          <div class="col-12" data-aos="fade-up" data-aos-delay="300">
+            <textarea placeholder="Sua mensagem" class="text-input my-2" rows="7" cols="30" id="message"
+              name="message"></textarea>
+          </div>
+          <div class="col-12" data-aos="fade-up" data-aos-delay="350">
+            <button type="submit" value="Submit" class="btn">Enviar</button>
+          </div>
+        </form>
+      </div>
+    </div>
+
+  </section>
+  <!-- ============== end contact section ========== -->
+
+
+
+  <!-- ============== Start Footer section ========== -->
+  <div class="footer">
+    <div class="container">
+      <div class="row justify-content-center align-items-center g-4">
+        <div class="col-12 col-lg-3 col-md-6 mx-auto my-4">
+          <div
+            class="box d-flex flex-column justify-content-md-start justify-content-lg-start justify-content-center align-items-center align-items-lg-start align-items-md-start">
+            <a href="#" class="logo "><img class="my-2" src="img/pixelcut-export (32).png" alt="Logo Agência BRN"></a>
+            <div class="hero-icons d-flex gap-lg-3 gap-2 my-lg-3 my-2" data-aos="fade-up" data-aos-delay="100">
+              <a href="https://www.instagram.com/danielbrito.emp/"><i class="bi bi-instagram"></i></a>
+              <a href="https://www.tiktok.com/@danielbrito.mkt"><i class="bi bi-tiktok"></i></a>
+              <a href="https://www.youtube.com/@danielbrito-emp"><i class="bi bi-youtube"></i></a>
+              <a href="www.linkedin.com/in/daniel-cavalcante-brit"><i class="bi bi-linkedin"></i></a>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+    </div>
+    <hr>
+    <div class="copyrights ">
+      <div class="container">
+        <div class="row">
+          <div class="col-12 col-md-6 d-flex justify-content-lg-start justify-content-md-start justify-content-center">
+            <p class="creadits">
+              © 2024
+              Criado por Daniel Brito
+            </p>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- ============== end Footer section ========== -->
+
+  <!--  JQuery file     -->
+  <script src="js/jquery-3.6.1.min.js"></script>
+
+  <!-- bootstrap min js -->
+  <script src="js/bootstrap.min.js"></script>
+
+  <!--  toasts file     -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js"></script>
+
+  <!--  owl carousel    -->
+  <script src="js/owl.carousel.min.js"></script>
+
+  <!-- aos file    -->
+  <script src="js/aos.js"></script>
+
+  <!-- gsap file    -->
+  <script src="js/gsap.min.js"></script>
+
+  <!--  counter     -->
+  <script src="js/jquery.counterup.min.js"></script>
+  <script src="js/jquery.waypoints.js"></script>
+
+  <!-- particles js file  -->
+  <script src="js/particles.min.js"></script>
+
+  <!-- jquery isotope file -->
+  <script src="js/isotope.min.js"></script>
+
+  <!-- jquery fancybox file -->
+  <script src="js/jquery.fancybox.min.js"></script>
+
+  <!--  Tilt.js file     -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.7.0/vanilla-tilt.min.js"></script>
+
+  <!--  main js file  -->
+  <script src="js/main.js"></script>
 
     <script>
-        const btnMenu = document.getElementById('btn-menu');
-        const menuMobile = document.getElementById('menu-mobile');
-        const overlayMenu = document.getElementById('overlay-menu');
-        const btnFechar = document.querySelector('.menu-mobile .btn-fechar');
+    // Function to toggle between dark and light mode
+    function toggleMode() {
+      const body = document.querySelector('body');
+      const modeIcon = document.getElementById('mode-icon');
 
-        btnMenu.addEventListener('click', () => {
-            menuMobile.classList.add('abrir-menu');
-            overlayMenu.style.display = 'block'; // Mostra o overlay
-        });
+      if (body.classList.contains('light-mode')) {
+        body.classList.remove('light-mode');
+        localStorage.setItem('theme', 'dark');
+        modeIcon.classList.remove('bi-sun-fill');
+        modeIcon.classList.add('bi-moon-fill');
 
-        btnFechar.addEventListener('click', () => {
-            menuMobile.classList.remove('abrir-menu');
-            overlayMenu.style.display = 'none'; // Esconde o overlay
-        });
+      } else {
+        body.classList.add('light-mode');
+        localStorage.setItem('theme', 'light');
+        modeIcon.classList.remove('bi-moon-fill');
+        modeIcon.classList.add('bi-sun-fill');
+      }
+    }
 
-        overlayMenu.addEventListener('click', () => {
-            menuMobile.classList.remove('abrir-menu');
-            overlayMenu.style.display = 'none'; // Esconde o overlay
-        });
-    </script>
+    // Event listener for the mode toggle button
+    document.getElementById('mode-toggle').addEventListener('click', toggleMode);
+
+    // Function to set the theme based on local storage
+     document.addEventListener('DOMContentLoaded', function() {
+      const theme = localStorage.getItem('theme');
+      const body = document.querySelector('body');
+      const modeIcon = document.getElementById('mode-icon');
+
+      if (theme === 'light') {
+        body.classList.add('light-mode');
+        modeIcon.classList.remove('bi-moon-fill');
+        modeIcon.classList.add('bi-sun-fill');
+
+      } else {
+
+        body.classList.remove('light-mode')
+        modeIcon.classList.remove('bi-sun-fill');
+        modeIcon.classList.add('bi-moon-fill');
+      }
+    });
+  </script>
 
 </body>
 
